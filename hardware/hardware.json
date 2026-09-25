@@ -1,0 +1,292 @@
+{
+  "BOX01": {
+    "deviceId": "BOX01",
+    "patientId": "DS-TB-1027",
+    "patientName": "katrina  roy",
+    "status": "Online",
+    "compartments": [
+      {
+        "compartment": 1,
+        "slot": "Morning",
+        "hour": 1,
+        "minute": 35
+      },
+      {
+        "compartment": 2,
+        "slot": "Evening",
+        "hour": 1,
+        "minute": 40
+      }
+    ],
+    "windowMinutes": 60,
+    "lastSync": "2026-09-25T11:36:47.923Z",
+    "lastEvent": {
+      "event_id": "BOX01-000076",
+      "device_id": "BOX01",
+      "patient_id": "DS-TB-1027",
+      "compartment": 1,
+      "event_type": "OUT_OF_WINDOW_OPEN",
+      "event_time": "2026-09-26T01:57:00+05:30",
+      "ldr_value": 1532
+    },
+    "lastPing": "2026-09-25T20:51:18.599Z",
+    "lastUpdated": "2026-09-25T21:12:31.182Z",
+    "scheduleVersion": 1790370751182,
+    "updatedAt": "2026-09-25T21:12:31.182Z",
+    "timezone": "Asia/Kolkata",
+    "ipAddress": "10.110.2.84"
+  },
+  "DSBOX-04": {
+    "deviceId": "DSBOX-04",
+    "patientId": "NONE",
+    "patientName": "Unassigned",
+    "status": "Online",
+    "compartments": [
+      {
+        "compartment": 1,
+        "slot": "Morning",
+        "hour": 8,
+        "minute": 0
+      },
+      {
+        "compartment": 2,
+        "slot": "Evening",
+        "hour": 20,
+        "minute": 0
+      }
+    ],
+    "windowMinutes": 30,
+    "lastSync": "2026-09-25T11:36:47.923Z",
+    "scheduleVersion": 1790356834428,
+    "updatedAt": "2026-09-25T17:20:34.428Z",
+    "timezone": "Asia/Kolkata",
+    "lastUpdated": "2026-09-25T17:20:34.428Z"
+  },
+  "DSBOX-17": {
+    "deviceId": "DSBOX-17",
+    "patientId": "DS-TB-1033",
+    "patientName": "Deepak_har",
+    "compartments": [
+      {
+        "compartment": 1,
+        "slot": "Morning",
+        "hour": 8,
+        "minute": 0
+      },
+      {
+        "compartment": 2,
+        "slot": "Evening",
+        "hour": 22,
+        "minute": 41
+      }
+    ],
+    "windowMinutes": 60,
+    "scheduleVersion": 1790355904321,
+    "updatedAt": "2026-09-25T17:05:04.321Z",
+    "timezone": "Asia/Kolkata",
+    "lastUpdated": "2026-09-25T17:05:04.321Z"
+  },
+  "DSBOX-18": {
+    "deviceId": "DSBOX-18",
+    "patientId": "NONE",
+    "patientName": "Unassigned",
+    "compartments": [
+      {
+        "compartment": 1,
+        "slot": "Morning",
+        "hour": 8,
+        "minute": 0
+      },
+      {
+        "compartment": 2,
+        "slot": "Evening",
+        "hour": 20,
+        "minute": 0
+      }
+    ],
+    "windowMinutes": 30,
+    "scheduleVersion": 1790355758845,
+    "updatedAt": "2026-09-25T17:02:38.845Z",
+    "timezone": "Asia/Kolkata",
+    "lastUpdated": "2026-09-25T17:02:38.846Z"
+  },
+  "DSBOX-12": {
+    "deviceId": "DSBOX-12",
+    "patientId": "NONE",
+    "patientName": "Unassigned",
+    "compartments": [
+      {
+        "compartment": 1,
+        "slot": "Morning",
+        "hour": 8,
+        "minute": 0
+      },
+      {
+        "compartment": 2,
+        "slot": "Evening",
+        "hour": 20,
+        "minute": 0
+      }
+    ],
+    "windowMinutes": 30,
+    "scheduleVersion": 1790356895623,
+    "updatedAt": "2026-09-25T17:21:35.623Z",
+    "timezone": "Asia/Kolkata",
+    "lastUpdated": "2026-09-25T17:21:35.623Z"
+  },
+  "DSBOX-08": {
+    "deviceId": "DSBOX-08",
+    "patientId": "NONE",
+    "patientName": "Unassigned",
+    "compartments": [
+      {
+        "compartment": 1,
+        "slot": "Morning",
+        "hour": 8,
+        "minute": 0
+      },
+      {
+        "compartment": 2,
+        "slot": "Evening",
+        "hour": 20,
+        "minute": 0
+      }
+    ],
+    "windowMinutes": 30,
+    "scheduleVersion": 1790356920774,
+    "updatedAt": "2026-09-25T17:22:00.774Z",
+    "timezone": "Asia/Kolkata",
+    "lastUpdated": "2026-09-25T17:22:00.774Z"
+  },
+  "DSBOX-02": {
+    "deviceId": "DSBOX-02",
+    "patientId": "NONE",
+    "patientName": "Unassigned",
+    "compartments": [
+      {
+        "compartment": 1,
+        "slot": "Morning",
+        "hour": 8,
+        "minute": 0
+      },
+      {
+        "compartment": 2,
+        "slot": "Evening",
+        "hour": 20,
+        "minute": 0
+      }
+    ],
+    "windowMinutes": 30,
+    "scheduleVersion": 1790356928949,
+    "updatedAt": "2026-09-25T17:22:08.949Z",
+    "timezone": "Asia/Kolkata",
+    "lastUpdated": "2026-09-25T17:22:08.949Z"
+  },
+  "DSBOX-19": {
+    "deviceId": "DSBOX-19",
+    "patientId": "NONE",
+    "patientName": "Unassigned",
+    "compartments": [
+      {
+        "compartment": 1,
+        "slot": "Morning",
+        "hour": 8,
+        "minute": 0
+      },
+      {
+        "compartment": 2,
+        "slot": "Evening",
+        "hour": 20,
+        "minute": 0
+      }
+    ],
+    "windowMinutes": 30,
+    "scheduleVersion": 1790356938597,
+    "updatedAt": "2026-09-25T17:22:18.597Z",
+    "timezone": "Asia/Kolkata",
+    "lastUpdated": "2026-09-25T17:22:18.597Z"
+  },
+  "DSBOX-31": {
+    "deviceId": "DSBOX-31",
+    "patientId": "NONE",
+    "patientName": "Unassigned",
+    "compartments": [
+      {
+        "compartment": 1,
+        "slot": "Morning",
+        "hour": 8,
+        "minute": 0
+      },
+      {
+        "compartment": 2,
+        "slot": "Evening",
+        "hour": 20,
+        "minute": 0
+      }
+    ],
+    "windowMinutes": 30,
+    "scheduleVersion": 1790356961733,
+    "updatedAt": "2026-09-25T17:22:41.733Z",
+    "timezone": "Asia/Kolkata",
+    "lastUpdated": "2026-09-25T17:22:41.733Z"
+  },
+  "DSBOX-11": {
+    "deviceId": "DSBOX-11",
+    "patientId": "DS-TB-1027",
+    "patientName": "katrina  roy",
+    "compartments": [
+      {
+        "compartment": 1,
+        "slot": "Morning",
+        "hour": 1,
+        "minute": 35
+      },
+      {
+        "compartment": 2,
+        "slot": "Evening",
+        "hour": 1,
+        "minute": 40
+      }
+    ],
+    "windowMinutes": 60,
+    "scheduleVersion": 1790370751180,
+    "updatedAt": "2026-09-25T21:12:31.180Z",
+    "timezone": "Asia/Kolkata",
+    "lastUpdated": "2026-09-25T21:12:31.180Z",
+    "lastEvent": {
+      "event_id": "MANUAL-1790367882543",
+      "device_id": "DSBOX-11",
+      "patient_id": "DS-TB-1027",
+      "compartment": 1,
+      "event_type": "COMPARTMENT_OPENED",
+      "event_time": "2026-09-25T20:24:42.543Z",
+      "ldr_value": 1250
+    },
+    "status": "Online",
+    "lastPing": "2026-09-25T20:24:42.635Z"
+  },
+  "DSBOX-16": {
+    "deviceId": "DSBOX-16",
+    "patientId": "NONE",
+    "patientName": "Unassigned",
+    "compartments": [
+      {
+        "compartment": 1,
+        "slot": "Morning",
+        "hour": 8,
+        "minute": 0
+      },
+      {
+        "compartment": 2,
+        "slot": "Evening",
+        "hour": 20,
+        "minute": 0
+      }
+    ],
+    "windowMinutes": 30,
+    "scheduleVersion": 1790360856965,
+    "updatedAt": "2026-09-25T18:27:36.965Z",
+    "timezone": "Asia/Kolkata",
+    "lastUpdated": "2026-09-25T18:27:36.965Z"
+  }
+}

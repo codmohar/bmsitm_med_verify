@@ -1,0 +1,46 @@
+{
+  "BOX01": {
+    "deviceId": "BOX01",
+    "patientId": "DS-TB-1024",
+    "patientName": "Ramesh Kumar",
+    "status": "Online",
+    "compartments": [
+      {
+        "compartment": 1,
+        "slot": "Morning",
+        "hour": 8,
+        "minute": 0
+      },
+      {
+        "compartment": 2,
+        "slot": "Evening",
+        "hour": 20,
+        "minute": 0
+      }
+    ],
+    "windowMinutes": 30,
+    "lastSync": "2026-09-25T11:36:47.923Z"
+  },
+  "DSBOX-04": {
+    "deviceId": "DSBOX-04",
+    "patientId": "DS-TB-1024",
+    "patientName": "Ramesh Kumar",
+    "status": "Online",
+    "compartments": [
+      {
+        "compartment": 1,
+        "slot": "Morning",
+        "hour": 8,
+        "minute": 0
+      },
+      {
+        "compartment": 2,
+        "slot": "Evening",
+        "hour": 20,
+        "minute": 0
+      }
+    ],
+    "windowMinutes": 30,
+    "lastSync": "2026-09-25T11:36:47.923Z"
+  }
+}

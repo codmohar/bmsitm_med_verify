@@ -1,0 +1,22 @@
+[
+  {
+    "id": "CW-408",
+    "name": "Dr. Ananya Sharma",
+    "role": "Senior TB Medical Officer & NTEP Coordinator",
+    "department": "Division of Pulmonary Medicine & DOTS Clinic",
+    "email": "ananya.sharma@health.gov.in",
+    "phone": "+91 98765 43210",
+    "centre": "Metro District Tuberculosis Centre (DTC-04)",
+    "avatarUrl": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=300&q=80"
+  },
+  {
+    "id": "CW-409",
+    "name": "Dr. Rajesh Deshmukh",
+    "role": "Consultant Pulmonologist & Adherence Specialist",
+    "department": "Department of Chest & Respiratory Diseases",
+    "email": "rajesh.deshmukh@health.gov.in",
+    "phone": "+91 98765 43219",
+    "centre": "Metro District Tuberculosis Centre (DTC-04)",
+    "avatarUrl": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=300&q=80"
+  }
+]

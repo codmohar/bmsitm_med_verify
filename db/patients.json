@@ -1,0 +1,1077 @@
+[
+  {
+    "id": "DS-TB-1027",
+    "authPin": "1234",
+    "fullName": "katrina  roy",
+    "age": 23,
+    "gender": "Male",
+    "dateOfBirth": "1988-04-16",
+    "phoneNumber": "+91 98761 12345",
+    "address": "H-42, Vikas Puri, West Delhi",
+    "emergencyContactName": "Sunita Sharma (Wife)",
+    "emergencyContactNumber": "+91 98761 12346",
+    "treatment": "Pulmonary Tuberculosis (Category 1 - 2HREZ/4HR)",
+    "treatmentStartDate": "2026-09-25",
+    "expectedTreatmentEndDate": "2027-03-16",
+    "medicationName": "4-FDC (Rifampicin + Isoniazid + Pyrazinamide + Ethambutol)",
+    "dosesPerDay": 2,
+    "prescribedTimes": [
+      "01:35 AM",
+      "01:40 AM"
+    ],
+    "allowedDoseWindowMinutes": 60,
+    "doctorName": "Dr. Ananya Sharma",
+    "treatmentCentre": "Metro District Tuberculosis Centre (DTC-04)",
+    "pillboxId": "DSBOX-11",
+    "compartments": 14,
+    "esp32Status": "Online",
+    "lastSync": "Just now (Heartbeat OK)",
+    "verificationMethod": "Both",
+    "deviceStatusDetails": {
+      "deviceId": "DSBOX-11",
+      "esp32Status": "Online",
+      "cameraStatus": "Active",
+      "internetStatus": "Connected (WiFi)",
+      "lastSync": "Device paired just now",
+      "batteryPercentage": 98,
+      "firmwareVersion": "v2.4.1-esp32-cv",
+      "compartmentCount": 14
+    },
+    "caregiverName": "Sunita Sharma",
+    "caregiverRelationship": "Spouse",
+    "whatsAppNumber": "+91 98761 12346",
+    "notificationPreferences": {
+      "doseTaken": true,
+      "doseLate": true,
+      "doseMissed": true,
+      "verificationFailed": true,
+      "deviceOffline": true
+    },
+    "consentGiven": true,
+    "assignedCareWorker": "Dr. Ananya Sharma",
+    "careWorkerId": "CW-408",
+    "adherencePercentage": 100,
+    "currentStreakDays": 2,
+    "status": "On Track",
+    "todayDoses": [
+      {
+        "slot": "Morning",
+        "scheduledTime": "01:35 AM",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "takenTime": "01:38 AM"
+      },
+      {
+        "slot": "Evening",
+        "scheduledTime": "01:40 AM",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false
+      }
+    ],
+    "history": [
+      {
+        "id": "rec-hw-1790367946436",
+        "patientId": "DS-TB-1027",
+        "date": "26 Sept",
+        "scheduledTime": "08:00 PM",
+        "eventTime": "2026-09-26T01:55:47+05:30",
+        "doseSlot": "Evening",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 2628). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 2628). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790367946436",
+        "patientId": "DS-TB-1027",
+        "date": "26 Sept",
+        "scheduledTime": "08:00 PM",
+        "eventTime": "2026-09-26T01:55:47+05:30",
+        "doseSlot": "Evening",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 2628). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 2628). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790367882625",
+        "patientId": "DS-TB-1027",
+        "date": "26 Sept",
+        "scheduledTime": "08:00 AM",
+        "eventTime": "2026-09-25T20:24:42.543Z",
+        "doseSlot": "Morning",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "DSBOX-11",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 1250). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 1250). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790367882625",
+        "patientId": "DS-TB-1027",
+        "date": "26 Sept",
+        "scheduledTime": "08:00 AM",
+        "eventTime": "2026-09-25T20:24:42.543Z",
+        "doseSlot": "Morning",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "DSBOX-11",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 1250). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 1250). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790367882588",
+        "patientId": "DS-TB-1027",
+        "date": "26 Sept",
+        "scheduledTime": "08:00 AM",
+        "eventTime": "2026-09-25T20:24:42.540Z",
+        "doseSlot": "Morning",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "DSBOX-11",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 1250). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 1250). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790367882588",
+        "patientId": "DS-TB-1027",
+        "date": "26 Sept",
+        "scheduledTime": "08:00 AM",
+        "eventTime": "2026-09-25T20:24:42.540Z",
+        "doseSlot": "Morning",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "DSBOX-11",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 1250). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 1250). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790367882550",
+        "patientId": "DS-TB-1027",
+        "date": "26 Sept",
+        "scheduledTime": "08:00 AM",
+        "eventTime": "2026-09-25T20:24:42.539Z",
+        "doseSlot": "Morning",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "DSBOX-11",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 1250). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 1250). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790367882550",
+        "patientId": "DS-TB-1027",
+        "date": "26 Sept",
+        "scheduledTime": "08:00 AM",
+        "eventTime": "2026-09-25T20:24:42.539Z",
+        "doseSlot": "Morning",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "DSBOX-11",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 1250). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 1250). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790367862919",
+        "patientId": "DS-TB-1027",
+        "date": "26 Sept",
+        "scheduledTime": "08:00 AM",
+        "eventTime": "2026-09-26T01:54:23+05:30",
+        "doseSlot": "Morning",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 1054). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 1054). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790367862919",
+        "patientId": "DS-TB-1027",
+        "date": "26 Sept",
+        "scheduledTime": "08:00 AM",
+        "eventTime": "2026-09-26T01:54:23+05:30",
+        "doseSlot": "Morning",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 1054). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 1054). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790367348928",
+        "patientId": "DS-TB-1027",
+        "date": "26 Sept",
+        "scheduledTime": "08:00 PM",
+        "eventTime": "2026-09-26T01:45:48+05:30",
+        "doseSlot": "Evening",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 3323). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 3323). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790367348928",
+        "patientId": "DS-TB-1027",
+        "date": "26 Sept",
+        "scheduledTime": "08:00 PM",
+        "eventTime": "2026-09-26T01:45:48+05:30",
+        "doseSlot": "Evening",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 3323). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 3323). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790367261916",
+        "patientId": "DS-TB-1027",
+        "date": "26 Sept",
+        "scheduledTime": "08:00 AM",
+        "eventTime": "2026-09-26T01:44:13+05:30",
+        "doseSlot": "Morning",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 1904). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 1904). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790367261916",
+        "patientId": "DS-TB-1027",
+        "date": "26 Sept",
+        "scheduledTime": "08:00 AM",
+        "eventTime": "2026-09-26T01:44:13+05:30",
+        "doseSlot": "Morning",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 1904). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 1904). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790367018764",
+        "patientId": "DS-TB-1027",
+        "date": "26 Sept",
+        "scheduledTime": "08:00 AM",
+        "eventTime": "2026-09-26T01:40:19+05:30",
+        "doseSlot": "Morning",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 2528). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 2528). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790367018764",
+        "patientId": "DS-TB-1027",
+        "date": "26 Sept",
+        "scheduledTime": "08:00 AM",
+        "eventTime": "2026-09-26T01:40:19+05:30",
+        "doseSlot": "Morning",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 2528). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 2528). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790367015501",
+        "patientId": "DS-TB-1027",
+        "date": "26 Sept",
+        "scheduledTime": "08:00 PM",
+        "eventTime": "2026-09-26T01:40:15+05:30",
+        "doseSlot": "Evening",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 3183). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 3183). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790367015501",
+        "patientId": "DS-TB-1027",
+        "date": "26 Sept",
+        "scheduledTime": "08:00 PM",
+        "eventTime": "2026-09-26T01:40:15+05:30",
+        "doseSlot": "Evening",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 3183). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 3183). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790366994481",
+        "patientId": "DS-TB-1027",
+        "date": "26 Sept",
+        "scheduledTime": "08:00 AM",
+        "eventTime": "2026-09-26T01:39:51+05:30",
+        "doseSlot": "Morning",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 1410). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 1410). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790366994481",
+        "patientId": "DS-TB-1027",
+        "date": "26 Sept",
+        "scheduledTime": "08:00 AM",
+        "eventTime": "2026-09-26T01:39:51+05:30",
+        "doseSlot": "Morning",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 1410). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 1410). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790366971818",
+        "patientId": "DS-TB-1027",
+        "date": "26 Sept",
+        "scheduledTime": "08:00 AM",
+        "eventTime": "2026-09-26T01:39:32+05:30",
+        "doseSlot": "Morning",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 1966). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 1966). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790366971818",
+        "patientId": "DS-TB-1027",
+        "date": "26 Sept",
+        "scheduledTime": "08:00 AM",
+        "eventTime": "2026-09-26T01:39:32+05:30",
+        "doseSlot": "Morning",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 1966). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 1966). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790366950423",
+        "patientId": "DS-TB-1027",
+        "date": "26 Sept",
+        "scheduledTime": "08:00 AM",
+        "eventTime": "2026-09-26T01:39:10+05:30",
+        "doseSlot": "Morning",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 2610). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 2610). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790366950423",
+        "patientId": "DS-TB-1027",
+        "date": "26 Sept",
+        "scheduledTime": "08:00 AM",
+        "eventTime": "2026-09-26T01:39:10+05:30",
+        "doseSlot": "Morning",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 2610). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 2610). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-1790366890972",
+        "date": "26 Sept",
+        "scheduledTime": "01:35 AM",
+        "eventTime": "01:38 AM",
+        "doseSlot": "Morning",
+        "timingStatus": "ON_TIME",
+        "verificationEvidence": "INGESTION_CONSISTENT",
+        "pillboxVerified": true,
+        "aiVerified": true,
+        "deviceId": "DSBOX-11",
+        "alertSent": false,
+        "notes": "AI Video Verification: The patient clearly presented the prescribed orange tablet to the camera in the initial frame. The medication was then observed moving toward the mouth, followed by a swallowing action. Finally, the patient displayed an empty hand, confirming the medication was ingested, followed by water intake. (Confidence: 100%)",
+        "aiVerificationResult": {
+          "status": "MEDICINE_TAKEN",
+          "verified": true,
+          "confidence": 1,
+          "sequence_valid": true,
+          "events": {
+            "medicine_detected": true,
+            "medicine_to_mouth": true,
+            "mouth_interaction": true,
+            "hand_empty": true,
+            "water_intake": true
+          },
+          "timestamps": {
+            "hand_empty": "00:09",
+            "medicine_detected": "00:01",
+            "medicine_to_mouth": "00:03",
+            "mouth_interaction": "00:05",
+            "water_intake": "00:07"
+          },
+          "step_confidences": {
+            "medicine_confidence": 1,
+            "hand_to_mouth_confidence": 1,
+            "mouth_interaction_confidence": 1,
+            "hand_empty_confidence": 1,
+            "water_confidence": 1
+          },
+          "medicine_details": {
+            "detected_name": "4-FDC (Rifampicin + Isoniazid + Pyrazinamide + Ethambutol)",
+            "appearance": "solid oval tablet",
+            "color": "orange",
+            "shape": "oval",
+            "confidence": 1,
+            "notes": "Appearance matches 4-FDC standard tablet characteristics.",
+            "hand_pill_detected": true
+          },
+          "failed_step": null,
+          "explanation": "The patient clearly presented the prescribed orange tablet to the camera in the initial frame. The medication was then observed moving toward the mouth, followed by a swallowing action. Finally, the patient displayed an empty hand, confirming the medication was ingested, followed by water intake.",
+          "message": "Medication successfully verified as taken.",
+          "model_used": "Google Gemini 3.5 Flash Vision",
+          "ai_provider": "gemini"
+        }
+      },
+      {
+        "id": "rec-hw-1790366755218",
+        "patientId": "DS-TB-1027",
+        "date": "26 Sept",
+        "scheduledTime": "08:00 AM",
+        "eventTime": "2026-09-26T01:35:55+05:30",
+        "doseSlot": "Morning",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 3245). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 3245). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790366755218",
+        "patientId": "DS-TB-1027",
+        "date": "26 Sept",
+        "scheduledTime": "08:00 AM",
+        "eventTime": "2026-09-26T01:35:55+05:30",
+        "doseSlot": "Morning",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 3245). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 3245). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790366745360",
+        "patientId": "DS-TB-1027",
+        "date": "26 Sept",
+        "scheduledTime": "08:00 PM",
+        "eventTime": "2026-09-26T01:35:45+05:30",
+        "doseSlot": "Evening",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 2498). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 2498). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790366745360",
+        "patientId": "DS-TB-1027",
+        "date": "26 Sept",
+        "scheduledTime": "08:00 PM",
+        "eventTime": "2026-09-26T01:35:45+05:30",
+        "doseSlot": "Evening",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 2498). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 2498). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790366721350",
+        "patientId": "DS-TB-1027",
+        "date": "26 Sept",
+        "scheduledTime": "08:00 AM",
+        "eventTime": "2026-09-26T01:35:20+05:30",
+        "doseSlot": "Morning",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 3120). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 3120). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790366721350",
+        "patientId": "DS-TB-1027",
+        "date": "26 Sept",
+        "scheduledTime": "08:00 AM",
+        "eventTime": "2026-09-26T01:35:20+05:30",
+        "doseSlot": "Morning",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 3120). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 3120). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790366716281",
+        "patientId": "DS-TB-1027",
+        "date": "26 Sept",
+        "scheduledTime": "08:00 PM",
+        "eventTime": "2026-09-26T01:35:16+05:30",
+        "doseSlot": "Evening",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 1424). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 1424). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790366716281",
+        "patientId": "DS-TB-1027",
+        "date": "26 Sept",
+        "scheduledTime": "08:00 PM",
+        "eventTime": "2026-09-26T01:35:16+05:30",
+        "doseSlot": "Evening",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 1424). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 1424). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790360871253",
+        "patientId": "DS-TB-1027",
+        "date": "25 Sept",
+        "scheduledTime": "08:00 AM",
+        "eventTime": "2026-09-25T23:57:52+05:30",
+        "doseSlot": "Morning",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 2163). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 2163). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790360871253",
+        "patientId": "DS-TB-1027",
+        "date": "25 Sept",
+        "scheduledTime": "08:00 AM",
+        "eventTime": "2026-09-25T23:57:52+05:30",
+        "doseSlot": "Morning",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 2163). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 2163). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790360869159",
+        "patientId": "DS-TB-1027",
+        "date": "25 Sept",
+        "scheduledTime": "08:00 PM",
+        "eventTime": "2026-09-25T23:57:49+05:30",
+        "doseSlot": "Evening",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 2693). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 2693). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790360869159",
+        "patientId": "DS-TB-1027",
+        "date": "25 Sept",
+        "scheduledTime": "08:00 PM",
+        "eventTime": "2026-09-25T23:57:49+05:30",
+        "doseSlot": "Evening",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 2693). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 2693). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790360622670",
+        "patientId": "DS-TB-1027",
+        "date": "25 Sept",
+        "scheduledTime": "08:00 AM",
+        "eventTime": "2026-09-25T23:53:43+05:30",
+        "doseSlot": "Morning",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 2091). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 2091). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790360622670",
+        "patientId": "DS-TB-1027",
+        "date": "25 Sept",
+        "scheduledTime": "08:00 AM",
+        "eventTime": "2026-09-25T23:53:43+05:30",
+        "doseSlot": "Morning",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 2091). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 2091). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790360617473",
+        "patientId": "DS-TB-1027",
+        "date": "25 Sept",
+        "scheduledTime": "08:00 PM",
+        "eventTime": "2026-09-25T23:53:38+05:30",
+        "doseSlot": "Evening",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 3055). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 3055). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790360617473",
+        "patientId": "DS-TB-1027",
+        "date": "25 Sept",
+        "scheduledTime": "08:00 PM",
+        "eventTime": "2026-09-25T23:53:38+05:30",
+        "doseSlot": "Evening",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "pillboxVerified": true,
+        "aiVerified": false,
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 3055). Awaiting AI video verification.",
+        "aiVerificationResult": {
+          "verified": false,
+          "confidence": 0.5,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 3055). Patient must complete 20s AI video verification to confirm dose taken."
+        }
+      },
+      {
+        "id": "rec-hw-1790358503024",
+        "patientId": "DS-TB-1027",
+        "date": "25 Sept",
+        "scheduledTime": "08:00 AM",
+        "eventTime": "2026-09-25T23:18:23+05:30",
+        "doseSlot": "Morning",
+        "timingStatus": "ON_TIME",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 2013).",
+        "aiVerificationResult": {
+          "verified": true,
+          "confidence": 1,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 2013)."
+        }
+      },
+      {
+        "id": "rec-hw-1790358503024",
+        "patientId": "DS-TB-1027",
+        "date": "25 Sept",
+        "scheduledTime": "08:00 AM",
+        "eventTime": "2026-09-25T23:18:23+05:30",
+        "doseSlot": "Morning",
+        "timingStatus": "ON_TIME",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 2013).",
+        "aiVerificationResult": {
+          "verified": true,
+          "confidence": 1,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 2013)."
+        }
+      },
+      {
+        "id": "rec-hw-1790358501256",
+        "patientId": "DS-TB-1027",
+        "date": "25 Sept",
+        "scheduledTime": "08:00 PM",
+        "eventTime": "2026-09-25T23:18:22+05:30",
+        "doseSlot": "Evening",
+        "timingStatus": "ON_TIME",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 2979).",
+        "aiVerificationResult": {
+          "verified": true,
+          "confidence": 1,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 2979)."
+        }
+      },
+      {
+        "id": "rec-hw-1790358501256",
+        "patientId": "DS-TB-1027",
+        "date": "25 Sept",
+        "scheduledTime": "08:00 PM",
+        "eventTime": "2026-09-25T23:18:22+05:30",
+        "doseSlot": "Evening",
+        "timingStatus": "ON_TIME",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 2979).",
+        "aiVerificationResult": {
+          "verified": true,
+          "confidence": 1,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 2979)."
+        }
+      },
+      {
+        "id": "rec-hw-1790358011989",
+        "patientId": "DS-TB-1027",
+        "date": "25 Sept",
+        "scheduledTime": "08:00 AM",
+        "eventTime": "2026-09-25T23:10:12+05:30",
+        "doseSlot": "Morning",
+        "timingStatus": "ON_TIME",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 3263).",
+        "aiVerificationResult": {
+          "verified": true,
+          "confidence": 1,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 3263)."
+        }
+      },
+      {
+        "id": "rec-hw-1790358011989",
+        "patientId": "DS-TB-1027",
+        "date": "25 Sept",
+        "scheduledTime": "08:00 AM",
+        "eventTime": "2026-09-25T23:10:12+05:30",
+        "doseSlot": "Morning",
+        "timingStatus": "ON_TIME",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 3263).",
+        "aiVerificationResult": {
+          "verified": true,
+          "confidence": 1,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 3263)."
+        }
+      },
+      {
+        "id": "rec-hw-1790358006247",
+        "patientId": "DS-TB-1027",
+        "date": "25 Sept",
+        "scheduledTime": "08:00 PM",
+        "eventTime": "2026-09-25T23:10:06+05:30",
+        "doseSlot": "Evening",
+        "timingStatus": "ON_TIME",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 1411).",
+        "aiVerificationResult": {
+          "verified": true,
+          "confidence": 1,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 1411)."
+        }
+      },
+      {
+        "id": "rec-hw-1790358006247",
+        "patientId": "DS-TB-1027",
+        "date": "25 Sept",
+        "scheduledTime": "08:00 PM",
+        "eventTime": "2026-09-25T23:10:06+05:30",
+        "doseSlot": "Evening",
+        "timingStatus": "ON_TIME",
+        "verificationEvidence": "ACCESS_VERIFIED",
+        "deviceId": "BOX01",
+        "alertSent": false,
+        "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 1411).",
+        "aiVerificationResult": {
+          "verified": true,
+          "confidence": 1,
+          "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 1411)."
+        }
+      }
+    ]
+  }
+]
