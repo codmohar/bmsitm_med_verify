@@ -16,6 +16,7 @@ export const Page6PatientIdGenerated = ({
   patient,
   onNavigate,
   onViewProfile,
+  onDirectPatientLogin,
 }) => {
   const [copied, setCopied] = useState(false);
   const [showPrintModal, setShowPrintModal] = useState(false);
@@ -140,24 +141,41 @@ export const Page6PatientIdGenerated = ({
               <span>Print Patient Card</span>
             </button>
 
-            {/* Button 3: View Patient Profile */}
+            {/* Button 3: View Patient Profile (Doctor View) */}
             <button
               id="btn-view-registered-profile"
               onClick={() => onViewProfile(patient)}
-              className="w-full py-2.5 px-4 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs shadow-md shadow-teal-700/20 transition-all flex items-center justify-center gap-2 sm:col-span-2"
+              className="w-full py-2.5 px-4 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs shadow-md shadow-teal-700/20 transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
               <UserCheck className="w-4 h-4" />
-              <span>View Patient Profile</span>
+              <span>View Doctor Profile</span>
               <ArrowRight className="w-4 h-4" />
             </button>
 
-            {/* Button 4: Back to Dashboard */}
+            {/* Button 4: Instant Patient Portal Login */}
+            <button
+              id="btn-direct-patient-login"
+              onClick={() => {
+                if (onDirectPatientLogin) {
+                  onDirectPatientLogin(patient);
+                } else {
+                  onNavigate('page10_patient_dashboard');
+                }
+              }}
+              className="w-full py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md shadow-emerald-700/20 transition-all flex items-center justify-center gap-2 cursor-pointer"
+            >
+              <Sparkles className="w-4 h-4" />
+              <span>Log In to Patient Portal</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+
+            {/* Button 5: Back to Dashboard */}
             <button
               onClick={() => onNavigate('page3_cw_dashboard')}
-              className="w-full py-2 px-4 text-xs font-semibold text-slate-500 hover:text-slate-800 transition-colors sm:col-span-2 flex items-center justify-center gap-1.5"
+              className="w-full py-2 px-4 text-xs font-semibold text-slate-500 hover:text-slate-800 transition-colors sm:col-span-2 flex items-center justify-center gap-1.5 cursor-pointer"
             >
               <LayoutDashboard className="w-3.5 h-3.5" />
-              <span>Back to Dashboard</span>
+              <span>Back to Care Worker Dashboard</span>
             </button>
           </div>
         </div>

@@ -36,6 +36,7 @@ export const Page7PatientProfile = ({
   onNavigate,
   onDeletePatient,
   onUpdateMedicationSchedule,
+  onSelectPatientForLogin,
 }) => {
   const [showContactModal, setShowContactModal] = useState(false);
   const [customNote, setCustomNote] = useState('');
@@ -150,6 +151,13 @@ export const Page7PatientProfile = ({
           tableElement?.scrollIntoView({ behavior: 'smooth' });
         }}
         onAdjustSchedule={handleOpenScheduleModal}
+        onPatientPortalView={() => {
+          if (onSelectPatientForLogin) {
+            onSelectPatientForLogin(patient);
+          } else if (onNavigate) {
+            onNavigate('page10_patient_dashboard');
+          }
+        }}
         onDeletePatient={() => {
           setConfirmDischargeChecked(false);
           setDischargeReason('Medicare / DOTS Treatment Completed (Cured)');
@@ -799,7 +807,7 @@ export const Page7PatientProfile = ({
             <div className="flex items-center justify-end gap-2 pt-2">
               <button
                 onClick={() => setShowContactModal(false)}
-                className="px-3 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:bg-slate-100"
+                className="px-3 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:bg-white"
               >
                 Cancel
               </button>

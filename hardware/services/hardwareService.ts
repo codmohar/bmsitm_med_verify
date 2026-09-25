@@ -116,12 +116,9 @@ class HardwareService {
   ): DeviceScheduleResponse {
     this.activePatientId = patientId;
     const patient = dbService.getPatientById(patientId);
-    if (!patient) {
-      throw new Error(`Patient with ID "${patientId}" not found in database.`);
-    }
 
-    const mTime = patient.todayDoses?.find(d => d.slot === 'Morning')?.scheduledTime || patient.prescribedTimes?.[0] || '08:00 AM';
-    const eTime = patient.todayDoses?.find(d => d.slot === 'Evening')?.scheduledTime || patient.prescribedTimes?.[1] || '20:00 PM';
+    const mTime = patient?.todayDoses?.find(d => d.slot === 'Morning')?.scheduledTime || patient?.prescribedTimes?.[0] || '08:00 AM';
+    const eTime = patient?.todayDoses?.find(d => d.slot === 'Evening')?.scheduledTime || patient?.prescribedTimes?.[1] || '20:00 PM';
     const p1 = parseHourMinute(mTime, 8, 0);
     const p2 = parseHourMinute(eTime, 20, 0);
 
@@ -129,15 +126,16 @@ class HardwareService {
     const m1 = customSchedule?.dose1Minute ?? p1.minute;
     const h2 = customSchedule?.dose2Hour ?? p2.hour;
     const m2 = customSchedule?.dose2Minute ?? p2.minute;
-    const win = customSchedule?.windowMinutes ?? patient.allowedDoseWindowMinutes ?? 30;
+    const win = customSchedule?.windowMinutes ?? patient?.allowedDoseWindowMinutes ?? 30;
+    const patName = patient?.fullName || 'Active Patient';
 
     // Update the device currently assigned AND BOX01 so physical ESP32 immediately syncs
-    this.updateSchedule(deviceId, h1, m1, h2, m2, win, patient.fullName, patient.id);
+    this.updateSchedule(deviceId, h1, m1, h2, m2, win, patName, patientId);
     if (deviceId !== 'BOX01') {
-      this.updateSchedule('BOX01', h1, m1, h2, m2, win, patient.fullName, patient.id);
+      this.updateSchedule('BOX01', h1, m1, h2, m2, win, patName, patientId);
     }
 
-    console.log(`[DoseSure Hardware] Active website page set to Patient: "${patient.fullName}" (${patient.id}). Schedule -> Comp 1: ${h1}:${m1}, Comp 2: ${h2}:${m2}, Window: ${win}m`);
+    console.log(`[DoseSure Hardware] Active website page set to Patient: "${patName}" (${patientId}). Schedule -> Comp 1: ${h1}:${m1}, Comp 2: ${h2}:${m2}, Window: ${win}m`);
     return this.getSchedule(deviceId);
   }
 
@@ -438,8 +436,11 @@ class HardwareService {
     const todayDate = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
     const slot: DoseSlot = compartment === 1 ? 'Morning' : 'Evening';
 
-    // Find the mapped patient
-    const patient = dbService.getPatientById(device.patientId) || dbService.getPatientByPillboxId(device_id);
+    // Find the mapped patient (check payload patient_id, device association, pillbox ID, or active patient)
+    const patient = (payload.patient_id ? dbService.getPatientById(payload.patient_id) : null)
+      || dbService.getPatientById(device.patientId) 
+      || dbService.getPatientByPillboxId(device_id)
+      || (this.activePatientId ? dbService.getPatientById(this.activePatientId) : null);
 
     let actionTaken = 'LOGGED';
 

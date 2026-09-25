@@ -30,9 +30,9 @@
       "ldr_value": 1617
     },
     "lastPing": "2026-09-25T21:39:17.561Z",
-    "lastUpdated": "2026-09-25T21:39:17.564Z",
-    "scheduleVersion": 1790372334373,
-    "updatedAt": "2026-09-25T21:38:54.373Z",
+    "lastUpdated": "2026-09-25T22:00:08.201Z",
+    "scheduleVersion": 1790373608201,
+    "updatedAt": "2026-09-25T22:00:08.201Z",
     "timezone": "Asia/Kolkata",
     "ipAddress": "127.0.0.1"
   },
@@ -249,10 +249,10 @@
       }
     ],
     "windowMinutes": 60,
-    "scheduleVersion": 1790372334370,
-    "updatedAt": "2026-09-25T21:38:54.370Z",
+    "scheduleVersion": 1790373608199,
+    "updatedAt": "2026-09-25T22:00:08.199Z",
     "timezone": "Asia/Kolkata",
-    "lastUpdated": "2026-09-25T21:38:54.370Z",
+    "lastUpdated": "2026-09-25T22:00:08.199Z",
     "lastEvent": {
       "event_id": "MANUAL-1790367882543",
       "device_id": "DSBOX-11",

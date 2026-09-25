@@ -43,7 +43,8 @@ export const Page10PatientDashboard = ({
   };
 
   // Find first pending dose or default to Evening
-  const pendingDose = patient.todayDoses.find((d) => d.timingStatus === 'PENDING');
+  const todayDoses = patient?.todayDoses || [];
+  const pendingDose = todayDoses.find((d) => d.timingStatus === 'PENDING');
   const fallbackSlot = pendingDose ? pendingDose.slot : 'Evening';
 
   // Live Hardware telemetry & buzzer activation state
@@ -221,13 +222,13 @@ export const Page10PatientDashboard = ({
             </p>
           </div>
           <span className="text-xs font-bold text-teal-800 bg-teal-50 px-2.5 py-1 rounded-full border border-teal-200">
-            {patient.todayDoses.filter(d => d.timingStatus === 'ON_TIME' || d.timingStatus === 'LATE').length} of {patient.todayDoses.length} Completed
+            {todayDoses.filter(d => d.timingStatus === 'ON_TIME' || d.timingStatus === 'LATE').length} of {todayDoses.length} Completed
           </span>
         </div>
 
         {/* Dose Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {patient.todayDoses.map((dose, idx) => (
+          {todayDoses.map((dose, idx) => (
             <DoseCard
               key={idx}
               slot={dose.slot}
@@ -262,7 +263,7 @@ export const Page10PatientDashboard = ({
           <button
             id="launch-video-verification-btn"
             onClick={() => handleOpenDoseIntake(fallbackSlot)}
-            className="w-full sm:w-auto px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs shadow-sm transition-all flex items-center justify-center gap-1.5"
+            className="w-full sm:w-auto px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs shadow-sm transition-all flex items-center justify-center gap-1.5 cursor-pointer"
           >
             <Camera className="w-3.5 h-3.5" />
             <span>Open Dose Verification ({fallbackSlot})</span>
@@ -286,14 +287,14 @@ export const Page10PatientDashboard = ({
           </div>
           <div className="flex items-center justify-between text-xs pt-1">
             <span className="text-slate-600 flex items-center gap-1 font-mono">
-              <Wifi className="w-3.5 h-3.5 text-teal-600" /> {patient.pillboxId}
+              <Wifi className="w-3.5 h-3.5 text-teal-600" /> {patient?.pillboxId || 'BOX01'}
             </span>
             <span className="text-slate-800 font-bold flex items-center gap-1 font-mono">
-              <Battery className="w-3.5 h-3.5 text-emerald-600" /> {patient.deviceStatusDetails.batteryPercentage}%
+              <Battery className="w-3.5 h-3.5 text-emerald-600" /> {patient?.deviceStatusDetails?.batteryPercentage ?? 98}%
             </span>
           </div>
           <div className="text-[10px] text-slate-400">
-            Firmware: {patient.deviceStatusDetails.firmwareVersion}
+            Firmware: {patient?.deviceStatusDetails?.firmwareVersion || 'v2.4.1-esp32-cv'}
           </div>
         </div>
 

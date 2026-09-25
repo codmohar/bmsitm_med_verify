@@ -1,5 +1,115 @@
 [
   {
+    "id": "rec-1790372542508",
+    "date": "26 Sept",
+    "scheduledTime": "03:00 AM",
+    "eventTime": "03:12 AM",
+    "doseSlot": "Morning",
+    "timingStatus": "ON_TIME",
+    "verificationEvidence": "INGESTION_CONSISTENT",
+    "pillboxVerified": true,
+    "aiVerified": true,
+    "deviceId": "DSBOX-11",
+    "alertSent": false,
+    "notes": "AI Video Verification: The patient clearly presented the prescribed orange oblong pill in their fingers, brought it to their mouth for ingestion, and subsequently demonstrated an empty, open palm to confirm the medication was consumed. (Confidence: 100%)",
+    "aiVerificationResult": {
+      "status": "MEDICINE_TAKEN",
+      "verified": true,
+      "confidence": 1,
+      "sequence_valid": true,
+      "events": {
+        "medicine_detected": true,
+        "medicine_to_mouth": true,
+        "mouth_interaction": true,
+        "hand_empty": true,
+        "water_intake": false
+      },
+      "timestamps": {
+        "hand_empty": "00:06",
+        "medicine_detected": "00:00",
+        "medicine_to_mouth": "00:02",
+        "mouth_interaction": "00:03",
+        "water_intake": "not_observed"
+      },
+      "step_confidences": {
+        "medicine_confidence": 1,
+        "hand_to_mouth_confidence": 1,
+        "mouth_interaction_confidence": 1,
+        "hand_empty_confidence": 1,
+        "water_confidence": 1
+      },
+      "medicine_details": {
+        "detected_name": "4-FDC",
+        "appearance": "solid oblong pill",
+        "color": "orange",
+        "shape": "oblong",
+        "confidence": 1,
+        "notes": "Pill detected in hand, gesture tracked to mouth, palm confirmed empty.",
+        "hand_pill_detected": true
+      },
+      "failed_step": null,
+      "explanation": "The patient clearly presented the prescribed orange oblong pill in their fingers, brought it to their mouth for ingestion, and subsequently demonstrated an empty, open palm to confirm the medication was consumed.",
+      "message": "Medicine intake verified successfully.",
+      "model_used": "Clinical AI Vision Engine",
+      "ai_provider": "gemini"
+    }
+  },
+  {
+    "id": "rec-1790372542495",
+    "date": "26 Sept",
+    "scheduledTime": "03:00 AM",
+    "eventTime": "03:12 AM",
+    "doseSlot": "Morning",
+    "timingStatus": "ON_TIME",
+    "verificationEvidence": "INGESTION_CONSISTENT",
+    "pillboxVerified": true,
+    "aiVerified": true,
+    "deviceId": "DSBOX-11",
+    "alertSent": false,
+    "notes": "AI Video Verification: The patient clearly presented the prescribed orange oblong pill in their fingers, brought it to their mouth for ingestion, and subsequently demonstrated an empty, open palm to confirm the medication was consumed. (Confidence: 100%)",
+    "aiVerificationResult": {
+      "status": "MEDICINE_TAKEN",
+      "verified": true,
+      "confidence": 1,
+      "sequence_valid": true,
+      "events": {
+        "medicine_detected": true,
+        "medicine_to_mouth": true,
+        "mouth_interaction": true,
+        "hand_empty": true,
+        "water_intake": false
+      },
+      "timestamps": {
+        "hand_empty": "00:06",
+        "medicine_detected": "00:00",
+        "medicine_to_mouth": "00:02",
+        "mouth_interaction": "00:03",
+        "water_intake": "not_observed"
+      },
+      "step_confidences": {
+        "medicine_confidence": 1,
+        "hand_to_mouth_confidence": 1,
+        "mouth_interaction_confidence": 1,
+        "hand_empty_confidence": 1,
+        "water_confidence": 1
+      },
+      "medicine_details": {
+        "detected_name": "4-FDC",
+        "appearance": "solid oblong pill",
+        "color": "orange",
+        "shape": "oblong",
+        "confidence": 1,
+        "notes": "Pill detected in hand, gesture tracked to mouth, palm confirmed empty.",
+        "hand_pill_detected": true
+      },
+      "failed_step": null,
+      "explanation": "The patient clearly presented the prescribed orange oblong pill in their fingers, brought it to their mouth for ingestion, and subsequently demonstrated an empty, open palm to confirm the medication was consumed.",
+      "message": "Medicine intake verified successfully.",
+      "model_used": "Clinical AI Vision Engine",
+      "ai_provider": "gemini"
+    }
+  },
+  {
     "id": "rec-hw-1790371888929",
     "patientId": "DS-TB-1027",
     "date": "26 Sept",
@@ -390,7 +500,7 @@
       "failed_step": null,
       "explanation": "The patient clearly presented the prescribed orange tablet to the camera in the initial frame. The medication was then observed moving toward the mouth, followed by a swallowing action. Finally, the patient displayed an empty hand, confirming the medication was ingested, followed by water intake.",
       "message": "Medication successfully verified as taken.",
-      "model_used": "Google Gemini 3.5 Flash Vision",
+      "model_used": "Clinical AI Vision Engine",
       "ai_provider": "gemini"
     }
   },
@@ -445,7 +555,7 @@
       "failed_step": null,
       "explanation": "The patient clearly presented the prescribed orange tablet to the camera in the initial frame. The medication was then observed moving toward the mouth, followed by a swallowing action. Finally, the patient displayed an empty hand, confirming the medication was ingested, followed by water intake.",
       "message": "Medication successfully verified as taken.",
-      "model_used": "Google Gemini 3.5 Flash Vision",
+      "model_used": "Clinical AI Vision Engine",
       "ai_provider": "gemini"
     }
   },

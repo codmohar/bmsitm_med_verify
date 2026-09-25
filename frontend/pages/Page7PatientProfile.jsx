@@ -36,6 +36,7 @@ export const Page7PatientProfile = ({
   onNavigate,
   onDeletePatient,
   onUpdateMedicationSchedule,
+  onSelectPatientForLogin,
 }) => {
   const [showContactModal, setShowContactModal] = useState(false);
   const [customNote, setCustomNote] = useState('');
@@ -150,6 +151,13 @@ export const Page7PatientProfile = ({
           tableElement?.scrollIntoView({ behavior: 'smooth' });
         }}
         onAdjustSchedule={handleOpenScheduleModal}
+        onPatientPortalView={() => {
+          if (onSelectPatientForLogin) {
+            onSelectPatientForLogin(patient);
+          } else if (onNavigate) {
+            onNavigate('page10_patient_dashboard');
+          }
+        }}
         onDeletePatient={() => {
           setConfirmDischargeChecked(false);
           setDischargeReason('Medicare / DOTS Treatment Completed (Cured)');

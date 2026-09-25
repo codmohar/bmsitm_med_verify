@@ -201,18 +201,20 @@ export default function App() {
     savePatients(patients);
   }, [patients]);
 
-  // Synchronize the currently open patient with hardware backend so ESP32 dynamically follows the website
+  // Synchronize the currently active patient with hardware backend so ESP32 dynamically follows the website
   const lastSyncedActivePatientRef = useRef('');
   useEffect(() => {
-    if (!selectedPatient || typeof window === 'undefined') return;
+    const isPatientSection = activePage === 'page10_patient_dashboard' || activePage === 'page11_patient_history';
+    const activeTarget = isPatientSection ? (currentPatientUser || selectedPatient) : (selectedPatient || currentPatientUser);
+    if (!activeTarget || typeof window === 'undefined') return;
 
-    const morningDose = selectedPatient.todayDoses?.find((d) => d.slot === 'Morning')?.scheduledTime || selectedPatient.prescribedTimes?.[0] || '08:00 AM';
-    const eveningDose = selectedPatient.todayDoses?.find((d) => d.slot === 'Evening')?.scheduledTime || selectedPatient.prescribedTimes?.[1] || '08:00 PM';
+    const morningDose = activeTarget.todayDoses?.find((d) => d.slot === 'Morning')?.scheduledTime || activeTarget.prescribedTimes?.[0] || '08:00 AM';
+    const eveningDose = activeTarget.todayDoses?.find((d) => d.slot === 'Evening')?.scheduledTime || activeTarget.prescribedTimes?.[1] || '08:00 PM';
     const p1 = parseTimeToHourMinute(morningDose, 8, 0);
     const p2 = parseTimeToHourMinute(eveningDose, 20, 0);
-    const win = selectedPatient.allowedDoseWindowMinutes || 30;
+    const win = activeTarget.allowedDoseWindowMinutes || 30;
 
-    const syncKey = `${selectedPatient.id}|${selectedPatient.pillboxId || 'BOX01'}|${p1.hour}:${p1.minute}|${p2.hour}:${p2.minute}|${win}`;
+    const syncKey = `${activeTarget.id}|${activeTarget.pillboxId || 'BOX01'}|${p1.hour}:${p1.minute}|${p2.hour}:${p2.minute}|${win}`;
     if (lastSyncedActivePatientRef.current === syncKey) return;
     lastSyncedActivePatientRef.current = syncKey;
 
@@ -220,9 +222,9 @@ export default function App() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        deviceId: selectedPatient.pillboxId || 'BOX01',
-        patientId: selectedPatient.id,
-        patientName: selectedPatient.fullName,
+        deviceId: activeTarget.pillboxId || 'BOX01',
+        patientId: activeTarget.id,
+        patientName: activeTarget.fullName,
         dose1Hour: p1.hour,
         dose1Minute: p1.minute,
         dose2Hour: p2.hour,
@@ -230,7 +232,17 @@ export default function App() {
         windowMinutes: win,
       }),
     }).catch(() => {});
-  }, [selectedPatient?.id, selectedPatient?.pillboxId, selectedPatient?.prescribedTimes?.[0], selectedPatient?.prescribedTimes?.[1], selectedPatient?.allowedDoseWindowMinutes]);
+  }, [
+    activePage,
+    selectedPatient?.id,
+    selectedPatient?.pillboxId,
+    selectedPatient?.prescribedTimes?.[0],
+    selectedPatient?.prescribedTimes?.[1],
+    currentPatientUser?.id,
+    currentPatientUser?.pillboxId,
+    currentPatientUser?.prescribedTimes?.[0],
+    currentPatientUser?.prescribedTimes?.[1],
+  ]);
 
   // Handle Care Worker selecting a patient to view full profile
   const handleSelectPatient = (patient) => {
@@ -248,10 +260,11 @@ export default function App() {
 
   // Handle successful registration in Page 5
   const handleRegisterSuccess = (newPatient) => {
-    const updated = [newPatient, ...patients];
+    const updated = [newPatient, ...patients.filter((p) => p.id !== newPatient.id)];
     setPatients(updated);
     setNewlyRegisteredPatient(newPatient);
     setSelectedPatient(newPatient);
+    setCurrentPatientUser(newPatient);
     persistPatientRecord(newPatient); // Persists to both browser IndexedDB and server db/patients.json
 
     if (newPatient.pillboxId && typeof window !== 'undefined') {
@@ -639,6 +652,7 @@ export default function App() {
                 <Page5AddNewPatient
                   careWorker={careWorker}
                   existingPatientCount={patients.length}
+                  patients={patients}
                   onRegisterSuccess={handleRegisterSuccess}
                   onCancel={() => setActivePage('page4_patients')}
                 />
@@ -651,6 +665,10 @@ export default function App() {
                   onNavigate={setActivePage}
                   onDeletePatient={handleDeletePatient}
                   onUpdateMedicationSchedule={handleUpdateMedicationSchedule}
+                  onSelectPatientForLogin={(pat) => {
+                    setCurrentPatientUser(pat);
+                    setActivePage('page10_patient_dashboard');
+                  }}
                 />
               )}
 
@@ -692,6 +710,10 @@ export default function App() {
                 patient={newlyRegisteredPatient || selectedPatient}
                 onNavigate={setActivePage}
                 onViewProfile={handleSelectPatient}
+                onDirectPatientLogin={(pat) => {
+                  setCurrentPatientUser(pat);
+                  setActivePage('page10_patient_dashboard');
+                }}
               />
             )}
 

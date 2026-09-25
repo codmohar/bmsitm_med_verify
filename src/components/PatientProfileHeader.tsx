@@ -24,6 +24,7 @@ interface PatientProfileHeaderProps {
   onViewHistory: () => void;
   onAdjustSchedule?: () => void;
   onDeletePatient?: () => void;
+  onPatientPortalView?: () => void;
 }
 
 export const PatientProfileHeader: React.FC<PatientProfileHeaderProps> = ({
@@ -34,6 +35,7 @@ export const PatientProfileHeader: React.FC<PatientProfileHeaderProps> = ({
   onViewHistory,
   onAdjustSchedule,
   onDeletePatient,
+  onPatientPortalView,
 }) => {
   return (
     <div className="glass-panel rounded-3xl p-6 border border-white/80 shadow-xl mb-6">
@@ -131,6 +133,18 @@ export const PatientProfileHeader: React.FC<PatientProfileHeaderProps> = ({
             <History className="w-4 h-4 text-teal-600" />
             <span>View Full History</span>
           </button>
+
+          {onPatientPortalView && (
+            <button
+              id="btn-login-as-patient-header"
+              onClick={onPatientPortalView}
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold text-white bg-teal-600 hover:bg-teal-700 transition-all shadow-xs cursor-pointer"
+              title="Open Patient Portal as this patient"
+            >
+              <Sparkles className="w-4 h-4" />
+              <span>Log In as Patient</span>
+            </button>
+          )}
 
           {onDeletePatient && (
             <button

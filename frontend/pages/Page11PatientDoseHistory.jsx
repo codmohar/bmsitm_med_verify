@@ -27,7 +27,8 @@ export const Page11PatientDoseHistory = ({
   const [issueSubmitted, setIssueSubmitted] = useState(false);
 
   // Filter logic
-  const filteredHistory = patient.history.filter((record) => {
+  const historyList = patient?.history || [];
+  const filteredHistory = historyList.filter((record) => {
     if (filterRange === 'ALL') return true;
     if (filterRange === 'WEEK') {
       return true;
@@ -39,7 +40,7 @@ export const Page11PatientDoseHistory = ({
   });
 
   const handleOpenReportModal = (record) => {
-    setSelectedRecordForIssue(record || patient.history[0] || null);
+    setSelectedRecordForIssue(record || historyList[0] || null);
     setShowReportModal(true);
     setIssueSubmitted(false);
   };

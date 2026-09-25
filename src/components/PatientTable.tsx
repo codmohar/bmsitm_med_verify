@@ -145,7 +145,7 @@ export const PatientTable: React.FC<PatientTableProps> = ({
                 </tr>
               ) : (
                 filteredPatients.map((patient) => {
-                  const latestDose = patient.history[0] || (patient.todayDoses[0] ? {
+                  const latestDose = (patient.history && patient.history[0]) || (patient.todayDoses && patient.todayDoses[0] ? {
                     timingStatus: patient.todayDoses[0].timingStatus,
                     verificationEvidence: patient.todayDoses[0].verificationEvidence,
                     scheduledTime: patient.todayDoses[0].scheduledTime,

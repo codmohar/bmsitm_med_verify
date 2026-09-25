@@ -2434,11 +2434,6 @@ export const MedicationIntakeModal: React.FC<MedicationIntakeModalProps> = ({
                       <span className="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-bold border border-emerald-300">
                         {Math.round(verificationResult.confidence * 100)}% Confidence
                       </span>
-                      {verificationResult.model_used && (
-                        <span className="px-2 py-0.5 rounded-full bg-emerald-700/10 text-emerald-900 text-[10px] font-bold border border-emerald-300">
-                          {verificationResult.model_used}
-                        </span>
-                      )}
                     </div>
                   </div>
                   <p className="text-xs text-emerald-800 font-medium mt-0.5">
@@ -2462,11 +2457,6 @@ export const MedicationIntakeModal: React.FC<MedicationIntakeModalProps> = ({
                       <span className="px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-800 text-[11px] font-bold border border-rose-300">
                         Failed: {verificationResult.failed_step || 'Incomplete Sequence'}
                       </span>
-                      {verificationResult.model_used && (
-                        <span className="px-2 py-0.5 rounded-full bg-rose-700/10 text-rose-900 text-[10px] font-bold border border-rose-300">
-                          {verificationResult.model_used}
-                        </span>
-                      )}
                     </div>
                   </div>
                   <p className="text-xs text-rose-800 font-medium mt-0.5">
@@ -2490,11 +2480,6 @@ export const MedicationIntakeModal: React.FC<MedicationIntakeModalProps> = ({
                       <span className="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[11px] font-bold border border-amber-300">
                         Low Confidence ({Math.round(verificationResult.confidence * 100)}%)
                       </span>
-                      {verificationResult.model_used && (
-                        <span className="px-2 py-0.5 rounded-full bg-amber-700/10 text-amber-900 text-[10px] font-bold border border-amber-300">
-                          {verificationResult.model_used}
-                        </span>
-                      )}
                     </div>
                   </div>
                   <p className="text-xs text-amber-800 font-medium mt-0.5">

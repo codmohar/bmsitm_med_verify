@@ -85,9 +85,9 @@ export async function executeAiVerification(
               hand_pill_detected: false,
             },
             failed_step: 'medicine_detected',
-            explanation: `Clinical verification rejected at Step 1 by Google Gemini Vision: No medication detected in hand (${gate1.visual_evidence}). Patient presented an empty hand or pinched empty air before moving hand to mouth. An actual solid pill/tablet must be visibly held in fingers or on palm to verify intake.`,
+            explanation: `Clinical verification rejected at Step 1: No medication detected in hand (${gate1.visual_evidence}). Patient presented an empty hand or pinched empty air before moving hand to mouth. An actual solid pill/tablet must be visibly held in fingers or on palm to verify intake.`,
             message: 'Medication not verified: Hand was empty when presented to camera. No pill was held in fingers or palm.',
-            model_used: 'Google Gemini Vision (Gate 1 Forensic Audit)',
+            model_used: 'Clinical AI Vision (Gate 1 Forensic Audit)',
             ai_provider: 'gemini',
           };
         }

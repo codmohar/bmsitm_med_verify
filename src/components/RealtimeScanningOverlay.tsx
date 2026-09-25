@@ -136,7 +136,7 @@ export const RealtimeScanningOverlay: React.FC<RealtimeScanningOverlayProps> = (
                 Clinical Activity Verification Protocol
               </h5>
               <p className="text-[11px] text-slate-500">
-                Google Gemini 3.6 Flash Vision Pipeline • 3 Mandatory Steps + 1 Optional Water Intake
+                Clinical Multi-Stage Vision Pipeline • 3 Mandatory Steps + 1 Optional Water Intake
               </p>
             </div>
           </div>

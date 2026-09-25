@@ -427,7 +427,7 @@ DECISION PROTOCOL:
 
     const parsed = JSON.parse(text);
     console.log('Gemini Parsed Inspection Output:', JSON.stringify(parsed, null, 2));
-    return normalizeVerification(parsed, 'Google Gemini 3.5 Flash Vision', 'gemini', expectedMed);
+    return normalizeVerification(parsed, 'Clinical AI Vision Engine', 'gemini', expectedMed);
   } catch (err) {
     console.error('Gemini Verification Error:', err);
     return null;

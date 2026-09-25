@@ -51,17 +51,17 @@
     "assignedCareWorker": "Dr. Ananya Sharma",
     "careWorkerId": "CW-408",
     "adherencePercentage": 100,
-    "currentStreakDays": 2,
+    "currentStreakDays": 3,
     "status": "On Track",
     "todayDoses": [
       {
         "slot": "Morning",
         "scheduledTime": "03:00 AM",
-        "timingStatus": "PENDING",
-        "verificationEvidence": "ACCESS_VERIFIED",
+        "timingStatus": "ON_TIME",
+        "verificationEvidence": "INGESTION_CONSISTENT",
         "pillboxVerified": true,
-        "aiVerified": false,
-        "takenTime": "01:38 AM"
+        "aiVerified": true,
+        "takenTime": "03:12 AM"
       },
       {
         "slot": "Evening",
@@ -73,6 +73,61 @@
       }
     ],
     "history": [
+      {
+        "id": "rec-1790372542495",
+        "date": "26 Sept",
+        "scheduledTime": "03:00 AM",
+        "eventTime": "03:12 AM",
+        "doseSlot": "Morning",
+        "timingStatus": "ON_TIME",
+        "verificationEvidence": "INGESTION_CONSISTENT",
+        "pillboxVerified": true,
+        "aiVerified": true,
+        "deviceId": "DSBOX-11",
+        "alertSent": false,
+        "notes": "AI Video Verification: The patient clearly presented the prescribed orange oblong pill in their fingers, brought it to their mouth for ingestion, and subsequently demonstrated an empty, open palm to confirm the medication was consumed. (Confidence: 100%)",
+        "aiVerificationResult": {
+          "status": "MEDICINE_TAKEN",
+          "verified": true,
+          "confidence": 1,
+          "sequence_valid": true,
+          "events": {
+            "medicine_detected": true,
+            "medicine_to_mouth": true,
+            "mouth_interaction": true,
+            "hand_empty": true,
+            "water_intake": false
+          },
+          "timestamps": {
+            "hand_empty": "00:06",
+            "medicine_detected": "00:00",
+            "medicine_to_mouth": "00:02",
+            "mouth_interaction": "00:03",
+            "water_intake": "not_observed"
+          },
+          "step_confidences": {
+            "medicine_confidence": 1,
+            "hand_to_mouth_confidence": 1,
+            "mouth_interaction_confidence": 1,
+            "hand_empty_confidence": 1,
+            "water_confidence": 1
+          },
+          "medicine_details": {
+            "detected_name": "4-FDC",
+            "appearance": "solid oblong pill",
+            "color": "orange",
+            "shape": "oblong",
+            "confidence": 1,
+            "notes": "Pill detected in hand, gesture tracked to mouth, palm confirmed empty.",
+            "hand_pill_detected": true
+          },
+          "failed_step": null,
+          "explanation": "The patient clearly presented the prescribed orange oblong pill in their fingers, brought it to their mouth for ingestion, and subsequently demonstrated an empty, open palm to confirm the medication was consumed.",
+          "message": "Medicine intake verified successfully.",
+          "model_used": "Google Gemini 3.5 Flash Vision",
+          "ai_provider": "gemini"
+        }
+      },
       {
         "id": "rec-hw-1790371841567",
         "patientId": "DS-TB-1027",
@@ -1153,5 +1208,91 @@
         }
       }
     ]
+  },
+  {
+    "id": "DS-TB-1024",
+    "authPin": "1234",
+    "fullName": "Ramesh Kumar",
+    "age": 48,
+    "gender": "Male",
+    "treatment": "Pulmonary TB",
+    "medicationName": "4-FDC",
+    "dosesPerDay": 2,
+    "prescribedTimes": [
+      "08:00 AM",
+      "08:00 PM"
+    ],
+    "allowedDoseWindowMinutes": 60,
+    "doctorName": "Dr. Vikram Sethi",
+    "treatmentCentre": "Govt TB Hospital",
+    "pillboxId": "DSBOX-01",
+    "esp32Status": "Online",
+    "caregiverName": "Sunita Kumar",
+    "whatsAppNumber": "+91 98765 43210",
+    "status": "On Track",
+    "adherencePercentage": 96,
+    "currentStreakDays": 14,
+    "todayDoses": [
+      {
+        "slot": "Morning",
+        "scheduledTime": "08:00 AM",
+        "timingStatus": "ON_TIME",
+        "verificationEvidence": "INGESTION_CONSISTENT",
+        "pillboxVerified": true,
+        "aiVerified": true
+      },
+      {
+        "slot": "Evening",
+        "scheduledTime": "08:00 PM",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "UNVERIFIED",
+        "pillboxVerified": false,
+        "aiVerified": false
+      }
+    ],
+    "history": []
+  },
+  {
+    "id": "DS-TB-1028",
+    "authPin": "5678",
+    "fullName": "Mohammed Farooq",
+    "age": 34,
+    "gender": "Male",
+    "treatment": "Pulmonary TB",
+    "medicationName": "4-FDC",
+    "dosesPerDay": 2,
+    "prescribedTimes": [
+      "08:00 AM",
+      "08:00 PM"
+    ],
+    "allowedDoseWindowMinutes": 60,
+    "doctorName": "Dr. Vikram Sethi",
+    "treatmentCentre": "Govt TB Hospital",
+    "pillboxId": "DSBOX-02",
+    "esp32Status": "Online",
+    "caregiverName": "Zainab Farooq",
+    "whatsAppNumber": "+91 98765 11223",
+    "status": "Late",
+    "adherencePercentage": 78,
+    "currentStreakDays": 0,
+    "todayDoses": [
+      {
+        "slot": "Morning",
+        "scheduledTime": "08:00 AM",
+        "timingStatus": "MISSED",
+        "verificationEvidence": "UNVERIFIED",
+        "pillboxVerified": false,
+        "aiVerified": false
+      },
+      {
+        "slot": "Evening",
+        "scheduledTime": "08:00 PM",
+        "timingStatus": "PENDING",
+        "verificationEvidence": "UNVERIFIED",
+        "pillboxVerified": false,
+        "aiVerified": false
+      }
+    ],
+    "history": []
   }
 ]

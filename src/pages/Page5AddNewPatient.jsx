@@ -20,13 +20,17 @@ import { generateNextPatientId } from '../utils/helpers';
 export const Page5AddNewPatient = ({
   careWorker,
   existingPatientCount,
+  patients = [],
   onRegisterSuccess,
   onCancel,
 }) => {
   const [currentStep, setCurrentStep] = useState(1);
   const [validationError, setValidationError] = useState('');
 
-  // Step 1: Personal Details
+  // Step 1: Personal Details & Custom Patient ID / Access PIN
+  const initialGeneratedId = generateNextPatientId(existingPatientCount);
+  const [patientId, setPatientId] = useState(initialGeneratedId);
+  const [authPin, setAuthPin] = useState('1234');
   const [fullName, setFullName] = useState('Deepak Sharma');
   const [age, setAge] = useState(38);
   const [gender, setGender] = useState('Male');
@@ -35,6 +39,11 @@ export const Page5AddNewPatient = ({
   const [address, setAddress] = useState('H-42, Vikas Puri, West Delhi');
   const [emergencyContactName, setEmergencyContactName] = useState('Sunita Sharma (Wife)');
   const [emergencyContactNumber, setEmergencyContactNumber] = useState('+91 98761 12346');
+
+  const handleGenerateFreshId = () => {
+    const candidateId = `DS-TB-${1030 + Math.floor(Math.random() * 8900)}`;
+    setPatientId(candidateId);
+  };
 
   // Step 2: Treatment Details
   const [treatment, setTreatment] = useState('Pulmonary Tuberculosis (Category 1 - 2HREZ/4HR)');
@@ -73,6 +82,15 @@ export const Page5AddNewPatient = ({
   const validateStep = (step) => {
     setValidationError('');
     if (step === 1) {
+      const cleanId = patientId.trim().toUpperCase();
+      if (!cleanId) {
+        setValidationError('Patient ID is required. You can auto-generate or type your own custom ID.');
+        return false;
+      }
+      if (patients && patients.some((p) => p.id?.toUpperCase() === cleanId)) {
+        setValidationError(`Patient ID "${cleanId}" is already assigned to another patient. Please enter a unique ID.`);
+        return false;
+      }
       if (!fullName.trim() || !age || !dateOfBirth || !address.trim() || !emergencyContactName.trim() || !emergencyContactNumber.trim()) {
         setValidationError('Please complete all required personal details before continuing.');
         return false;
@@ -115,12 +133,12 @@ export const Page5AddNewPatient = ({
   };
 
   const handleFinalSubmit = () => {
-    const generatedId = generateNextPatientId(existingPatientCount);
+    const cleanId = patientId.trim().toUpperCase() || generateNextPatientId(existingPatientCount);
     const timesArray = prescribedTimes.split(',').map((t) => t.trim());
 
     const newPatient = {
-      id: generatedId,
-      authPin: '1234',
+      id: cleanId,
+      authPin: authPin.trim() || '1234',
       fullName,
       age: Number(age),
       gender,
@@ -135,23 +153,23 @@ export const Page5AddNewPatient = ({
       medicationName,
       dosesPerDay: Number(dosesPerDay),
       prescribedTimes: timesArray.length > 0 ? timesArray : ['08:00 AM', '08:00 PM'],
-      allowedDoseWindowMinutes: Number(allowedDoseWindowMinutes),
+      allowedDoseWindowMinutes: Number(allowedDoseWindowMinutes) || 30,
       doctorName,
       treatmentCentre,
-      pillboxId,
-      compartments: Number(compartments),
-      esp32Status,
-      lastSync,
+      pillboxId: pillboxId.trim() || 'BOX01',
+      compartments: Number(compartments) || 14,
+      esp32Status: 'Online',
+      lastSync: 'Just registered',
       verificationMethod,
       deviceStatusDetails: {
-        deviceId: pillboxId,
+        deviceId: pillboxId.trim() || 'BOX01',
         esp32Status: 'Online',
         cameraStatus: verificationMethod === 'Smart Pillbox Access' ? 'Disabled' : 'Active',
         internetStatus: 'Connected (WiFi)',
         lastSync: 'Device paired just now',
         batteryPercentage: 98,
         firmwareVersion: 'v2.4.1-esp32-cv',
-        compartmentCount: Number(compartments),
+        compartmentCount: Number(compartments) || 14,
       },
       caregiverName,
       caregiverRelationship,
@@ -167,7 +185,7 @@ export const Page5AddNewPatient = ({
       assignedCareWorker: careWorker.name,
       careWorkerId: careWorker.id,
       adherencePercentage: 100,
-      currentStreakDays: 1,
+      currentStreakDays: 0,
       status: 'On Track',
       todayDoses: [
         {
@@ -175,12 +193,16 @@ export const Page5AddNewPatient = ({
           scheduledTime: timesArray[0] || '08:00 AM',
           timingStatus: 'PENDING',
           verificationEvidence: 'UNVERIFIED',
+          pillboxVerified: false,
+          aiVerified: false,
         },
         {
           slot: 'Evening',
           scheduledTime: timesArray[1] || '08:00 PM',
           timingStatus: 'PENDING',
           verificationEvidence: 'UNVERIFIED',
+          pillboxVerified: false,
+          aiVerified: false,
         },
       ],
       history: [],
@@ -295,6 +317,45 @@ export const Page5AddNewPatient = ({
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* Patient ID with Auto-Generate / Custom edit option */}
+              <div>
+                <div className="flex items-center justify-between mb-1">
+                  <label className="block text-xs font-bold text-slate-700">Patient ID *</label>
+                  <button
+                    type="button"
+                    onClick={handleGenerateFreshId}
+                    className="text-[10px] text-teal-700 hover:text-teal-900 font-bold underline cursor-pointer"
+                  >
+                    Auto-Generate ID
+                  </button>
+                </div>
+                <input
+                  type="text"
+                  required
+                  placeholder="e.g. DS-TB-1025 or Custom ID"
+                  value={patientId}
+                  onChange={(e) => setPatientId(e.target.value.toUpperCase())}
+                  className="w-full p-2.5 text-xs rounded-xl glass-input focus:outline-none font-mono font-bold tracking-wider text-teal-900 uppercase"
+                />
+              </div>
+
+              {/* Patient Portal Login PIN */}
+              <div>
+                <div className="flex items-center justify-between mb-1">
+                  <label className="block text-xs font-bold text-slate-700">Patient Login PIN *</label>
+                  <span className="text-[10px] text-slate-400">Used for patient portal login</span>
+                </div>
+                <input
+                  type="text"
+                  required
+                  maxLength={8}
+                  placeholder="e.g. 1234"
+                  value={authPin}
+                  onChange={(e) => setAuthPin(e.target.value)}
+                  className="w-full p-2.5 text-xs rounded-xl glass-input focus:outline-none font-mono font-bold"
+                />
+              </div>
+
               <div>
                 <label className="block text-xs font-bold text-slate-700 mb-1">Full Name *</label>
                 <input
@@ -756,6 +817,8 @@ export const Page5AddNewPatient = ({
                   <span className="font-bold text-slate-900">Personal Details</span>
                   <button onClick={() => setCurrentStep(1)} className="text-teal-700 font-bold hover:underline text-[11px]">Edit</button>
                 </div>
+                <div><span className="text-slate-500">Patient ID:</span> <strong className="font-mono text-teal-800">{patientId}</strong></div>
+                <div><span className="text-slate-500">Login PIN:</span> <strong className="font-mono text-slate-800">{authPin}</strong></div>
                 <div><span className="text-slate-500">Full Name:</span> <strong className="text-slate-800">{fullName}</strong></div>
                 <div><span className="text-slate-500">Age & Gender:</span> <span className="text-slate-800 font-medium">{age} yrs, {gender} (DOB: {dateOfBirth})</span></div>
                 <div><span className="text-slate-500">Phone:</span> <span className="text-slate-800 font-medium">{phoneNumber || 'Not provided'}</span></div>
