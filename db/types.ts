@@ -30,6 +30,8 @@ export interface DoseRecord {
   alertSent: boolean;
   notes?: string;
   aiVerificationResult?: any;
+  pillboxVerified?: boolean;
+  aiVerified?: boolean;
 }
 
 export interface DeviceStatus {
@@ -91,6 +93,8 @@ export interface Patient {
     takenTime?: string;
     timingStatus: TimingStatus;
     verificationEvidence: VerificationEvidence;
+    pillboxVerified?: boolean;
+    aiVerified?: boolean;
   }[];
   history: DoseRecord[];
 }

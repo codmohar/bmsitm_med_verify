@@ -8,33 +8,33 @@
       {
         "compartment": 1,
         "slot": "Morning",
-        "hour": 1,
-        "minute": 35
+        "hour": 3,
+        "minute": 0
       },
       {
         "compartment": 2,
         "slot": "Evening",
-        "hour": 1,
-        "minute": 40
+        "hour": 3,
+        "minute": 10
       }
     ],
     "windowMinutes": 60,
     "lastSync": "2026-09-25T11:36:47.923Z",
     "lastEvent": {
-      "event_id": "BOX01-000076",
+      "event_id": "BOX01-000090",
       "device_id": "BOX01",
       "patient_id": "DS-TB-1027",
-      "compartment": 1,
+      "compartment": 2,
       "event_type": "OUT_OF_WINDOW_OPEN",
-      "event_time": "2026-09-26T01:57:00+05:30",
-      "ldr_value": 1532
+      "event_time": "2026-09-26T03:01:29+05:30",
+      "ldr_value": 1617
     },
-    "lastPing": "2026-09-25T20:51:18.599Z",
-    "lastUpdated": "2026-09-25T21:12:31.182Z",
-    "scheduleVersion": 1790370751182,
-    "updatedAt": "2026-09-25T21:12:31.182Z",
+    "lastPing": "2026-09-25T21:39:17.561Z",
+    "lastUpdated": "2026-09-25T21:39:17.564Z",
+    "scheduleVersion": 1790372334373,
+    "updatedAt": "2026-09-25T21:38:54.373Z",
     "timezone": "Asia/Kolkata",
-    "ipAddress": "10.110.2.84"
+    "ipAddress": "127.0.0.1"
   },
   "DSBOX-04": {
     "deviceId": "DSBOX-04",
@@ -238,21 +238,21 @@
       {
         "compartment": 1,
         "slot": "Morning",
-        "hour": 1,
-        "minute": 35
+        "hour": 3,
+        "minute": 0
       },
       {
         "compartment": 2,
         "slot": "Evening",
-        "hour": 1,
-        "minute": 40
+        "hour": 3,
+        "minute": 10
       }
     ],
     "windowMinutes": 60,
-    "scheduleVersion": 1790370751180,
-    "updatedAt": "2026-09-25T21:12:31.180Z",
+    "scheduleVersion": 1790372334370,
+    "updatedAt": "2026-09-25T21:38:54.370Z",
     "timezone": "Asia/Kolkata",
-    "lastUpdated": "2026-09-25T21:12:31.180Z",
+    "lastUpdated": "2026-09-25T21:38:54.370Z",
     "lastEvent": {
       "event_id": "MANUAL-1790367882543",
       "device_id": "DSBOX-11",

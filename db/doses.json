@@ -1,5 +1,105 @@
 [
   {
+    "id": "rec-hw-1790371888929",
+    "patientId": "DS-TB-1027",
+    "date": "26 Sept",
+    "scheduledTime": "08:00 AM",
+    "eventTime": "2026-09-26T03:01:29+05:30",
+    "doseSlot": "Morning",
+    "timingStatus": "PENDING",
+    "verificationEvidence": "ACCESS_VERIFIED",
+    "pillboxVerified": true,
+    "aiVerified": false,
+    "deviceId": "BOX01",
+    "alertSent": false,
+    "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 1904). Awaiting AI video verification.",
+    "aiVerificationResult": {
+      "verified": false,
+      "confidence": 0.5,
+      "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 1904). Patient must complete 20s AI video verification to confirm dose taken."
+    }
+  },
+  {
+    "id": "rec-hw-1790371861370",
+    "patientId": "DS-TB-1027",
+    "date": "26 Sept",
+    "scheduledTime": "08:00 AM",
+    "eventTime": "2026-09-26T03:01:02+05:30",
+    "doseSlot": "Morning",
+    "timingStatus": "PENDING",
+    "verificationEvidence": "ACCESS_VERIFIED",
+    "pillboxVerified": true,
+    "aiVerified": false,
+    "deviceId": "BOX01",
+    "alertSent": false,
+    "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 1903). Awaiting AI video verification.",
+    "aiVerificationResult": {
+      "verified": false,
+      "confidence": 0.5,
+      "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 1903). Patient must complete 20s AI video verification to confirm dose taken."
+    }
+  },
+  {
+    "id": "rec-hw-1790371851291",
+    "patientId": "DS-TB-1027",
+    "date": "26 Sept",
+    "scheduledTime": "08:00 AM",
+    "eventTime": "2026-09-26T03:00:52+05:30",
+    "doseSlot": "Morning",
+    "timingStatus": "PENDING",
+    "verificationEvidence": "ACCESS_VERIFIED",
+    "pillboxVerified": true,
+    "aiVerified": false,
+    "deviceId": "BOX01",
+    "alertSent": false,
+    "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 1726). Awaiting AI video verification.",
+    "aiVerificationResult": {
+      "verified": false,
+      "confidence": 0.5,
+      "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 1726). Patient must complete 20s AI video verification to confirm dose taken."
+    }
+  },
+  {
+    "id": "rec-hw-1790371841567",
+    "patientId": "DS-TB-1027",
+    "date": "26 Sept",
+    "scheduledTime": "08:00 AM",
+    "eventTime": "2026-09-26T03:00:42+05:30",
+    "doseSlot": "Morning",
+    "timingStatus": "PENDING",
+    "verificationEvidence": "ACCESS_VERIFIED",
+    "pillboxVerified": true,
+    "aiVerified": false,
+    "deviceId": "BOX01",
+    "alertSent": false,
+    "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 1391). Awaiting AI video verification.",
+    "aiVerificationResult": {
+      "verified": false,
+      "confidence": 0.5,
+      "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 1391). Patient must complete 20s AI video verification to confirm dose taken."
+    }
+  },
+  {
+    "id": "rec-hw-1790371808952",
+    "patientId": "DS-TB-1027",
+    "date": "26 Sept",
+    "scheduledTime": "08:00 AM",
+    "eventTime": "2026-09-26T03:00:09+05:30",
+    "doseSlot": "Morning",
+    "timingStatus": "PENDING",
+    "verificationEvidence": "ACCESS_VERIFIED",
+    "pillboxVerified": true,
+    "aiVerified": false,
+    "deviceId": "BOX01",
+    "alertSent": false,
+    "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 1469). Awaiting AI video verification.",
+    "aiVerificationResult": {
+      "verified": false,
+      "confidence": 0.5,
+      "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 1469). Patient must complete 20s AI video verification to confirm dose taken."
+    }
+  },
+  {
     "id": "rec-hw-1790367946436",
     "patientId": "DS-TB-1027",
     "date": "26 Sept",

@@ -76,8 +76,17 @@ export const MedicationIntakeModal: React.FC<MedicationIntakeModalProps> = ({
     (currentSlotDose?.timingStatus === 'ON_TIME' || currentSlotDose?.timingStatus === 'LATE')
   );
 
-  const [phase, setPhase] = useState<IntakePhase>('pillbox_verification');
-  const [pillboxStep, setPillboxStep] = useState<'connecting' | 'lid_open' | 'pill_retrieved' | 'verified'>('connecting');
+  const isPillboxAlreadyVerified = Boolean(
+    currentSlotDose?.pillboxVerified ||
+    currentSlotDose?.verificationEvidence === 'ACCESS_VERIFIED'
+  );
+
+  const [phase, setPhase] = useState<IntakePhase>(() =>
+    isPillboxAlreadyVerified && !isDoseFullyTaken ? 'video_capture' : 'pillbox_verification'
+  );
+  const [pillboxStep, setPillboxStep] = useState<'connecting' | 'lid_open' | 'pill_retrieved' | 'verified'>(() =>
+    isPillboxAlreadyVerified ? 'verified' : 'connecting'
+  );
   
   // Interactive Pillbox Hardware & Telemetry State
   const isCompartment1 = slot === 'Morning';
@@ -86,9 +95,11 @@ export const MedicationIntakeModal: React.FC<MedicationIntakeModalProps> = ({
   const targetLedPin = isCompartment1 ? 25 : 26;
   const targetBuzzerPin = 27;
 
-  const [pillboxLdrValue, setPillboxLdrValue] = useState<number | null>(null);
+  const [pillboxLdrValue, setPillboxLdrValue] = useState<number | null>(() =>
+    isPillboxAlreadyVerified ? 1250 : null
+  );
   const pillboxThreshold = 1000;
-  const [isLidOpened, setIsLidOpened] = useState<boolean>(false);
+  const [isLidOpened, setIsLidOpened] = useState<boolean>(() => isPillboxAlreadyVerified);
   const [ledActive, setLedActive] = useState<boolean>(false);
   const [buzzerActive, setBuzzerActive] = useState<boolean>(false);
   const [showFirmwareDrawer, setShowFirmwareDrawer] = useState<boolean>(false);
@@ -97,6 +108,22 @@ export const MedicationIntakeModal: React.FC<MedicationIntakeModalProps> = ({
   const [wifiPass, setWifiPass] = useState<string>('Nirmaan25hr');
   const [copiedFirmware, setCopiedFirmware] = useState<boolean>(false);
   const [serialLogs, setSerialLogs] = useState<string[]>([]);
+  const autoTransitionTimerRef = useRef<any>(null);
+
+  // Helper to mark pillbox as verified and seamlessly transition to AI Video Verification
+  const triggerVerifiedAndTransitionToVideo = useCallback((ldrVal: number = 1250) => {
+    setIsLidOpened(true);
+    setPillboxStep('verified');
+    setPillboxLdrValue(ldrVal);
+    setLedActive(false);
+    setBuzzerActive(false);
+
+    // Auto-advance to AI Video Verification camera window so patient can record oral intake
+    if (autoTransitionTimerRef.current) clearTimeout(autoTransitionTimerRef.current);
+    autoTransitionTimerRef.current = setTimeout(() => {
+      setPhase((prev) => (prev === 'pillbox_verification' ? 'video_capture' : prev));
+    }, 900);
+  }, []);
 
   // Web Serial API & Real-Time Sync State
   const [serialConnected, setSerialConnected] = useState<boolean>(false);
@@ -141,10 +168,7 @@ export const MedicationIntakeModal: React.FC<MedicationIntakeModalProps> = ({
     if (ldrVal !== null && !isNaN(ldrVal)) {
       setPillboxLdrValue(ldrVal);
       if (ldrVal > 1000) {
-        setIsLidOpened(true);
-        setPillboxStep('verified');
-        setLedActive(false);
-        setBuzzerActive(false);
+        triggerVerifiedAndTransitionToVideo(ldrVal);
       }
     }
 
@@ -156,11 +180,7 @@ export const MedicationIntakeModal: React.FC<MedicationIntakeModalProps> = ({
     );
 
     if (isTargetOpen) {
-      setIsLidOpened(true);
-      setPillboxStep('verified');
-      setLedActive(false);
-      setBuzzerActive(false);
-      if (ldrVal === null) setPillboxLdrValue(1250);
+      triggerVerifiedAndTransitionToVideo(ldrVal || 1250);
 
       fetch('/api/hardware/event', {
         method: 'POST',
@@ -312,11 +332,8 @@ export const MedicationIntakeModal: React.FC<MedicationIntakeModalProps> = ({
           setPillboxLdrValue(curLdr);
         }
 
-        if (typeof curLdr === 'number' && curLdr > 1000) {
-          setIsLidOpened(true);
-          setPillboxStep('verified');
-          setLedActive(false);
-          setBuzzerActive(false);
+        if ((typeof curLdr === 'number' && curLdr > 1000) || curOpened === true) {
+          triggerVerifiedAndTransitionToVideo(typeof curLdr === 'number' ? curLdr : 1250);
         } else if (!isLidOpened && !serialConnected) {
           if (typeof curLed === 'boolean') setLedActive(curLed);
           if (typeof telem.buzzer === 'boolean') setBuzzerActive(telem.buzzer);
@@ -343,15 +360,11 @@ export const MedicationIntakeModal: React.FC<MedicationIntakeModalProps> = ({
       isMounted = false;
       clearInterval(interval);
     };
-  }, [isOpen, targetCompartmentNumber, patient.pillboxId, isDoseFullyTaken, serialConnected, isLidOpened]);
+  }, [isOpen, targetCompartmentNumber, patient.pillboxId, isDoseFullyTaken, serialConnected, isLidOpened, triggerVerifiedAndTransitionToVideo]);
 
   const handleOpenPillboxLid = async () => {
     const lightVal = 1250;
-    setPillboxLdrValue(lightVal);
-    setIsLidOpened(true);
-    setPillboxStep('verified');
-    setLedActive(false);
-    setBuzzerActive(false);
+    triggerVerifiedAndTransitionToVideo(lightVal);
 
     processIncomingSerialLine(`------------------------------------------`);
     processIncomingSerialLine(`[LDR ${targetCompartmentNumber}] Reading: ${lightVal} > 1000 (LIGHT DETECTED!)`);
@@ -360,7 +373,7 @@ export const MedicationIntakeModal: React.FC<MedicationIntakeModalProps> = ({
     processIncomingSerialLine(`       COMPARTMENT ${targetCompartmentNumber} OPENED`);
     processIncomingSerialLine(`       LED ${targetCompartmentNumber} = OFF | BUZZER = OFF`);
     processIncomingSerialLine(`******************************************`);
-    processIncomingSerialLine(`[TELEMETRY] Pill access confirmed. Step 2 (AI Video Verification) is now unlocked!`);
+    processIncomingSerialLine(`[TELEMETRY] Pill access confirmed! Transitioning to AI Video Verification window...`);
 
     try {
       await fetch('/api/hardware/event', {
@@ -382,6 +395,10 @@ export const MedicationIntakeModal: React.FC<MedicationIntakeModalProps> = ({
   };
 
   const handleResetPillboxLid = () => {
+    if (autoTransitionTimerRef.current) {
+      clearTimeout(autoTransitionTimerRef.current);
+      autoTransitionTimerRef.current = null;
+    }
     setPillboxLdrValue(65);
     setIsLidOpened(false);
     setPillboxStep('lid_open');
@@ -834,11 +851,25 @@ export const MedicationIntakeModal: React.FC<MedicationIntakeModalProps> = ({
     }
   }, []);
 
-  // Reset modal state upon opening
+  // Reset or initialize modal state upon opening
   useEffect(() => {
     if (isOpen) {
-      setPhase('pillbox_verification');
-      setPillboxStep('connecting');
+      if (isPillboxAlreadyVerified && !isDoseFullyTaken) {
+        setPhase('video_capture');
+        setPillboxStep('verified');
+        setIsLidOpened(true);
+        setPillboxLdrValue(1250);
+        setLedActive(false);
+        setBuzzerActive(false);
+      } else {
+        setPhase('pillbox_verification');
+        setPillboxStep('connecting');
+        setIsLidOpened(false);
+        setPillboxLdrValue(null);
+        setLedActive(false);
+        setBuzzerActive(false);
+      }
+
       setCaptureMode('camera');
       setCameraState('requesting');
       setCameraError(null);
@@ -865,32 +896,22 @@ export const MedicationIntakeModal: React.FC<MedicationIntakeModalProps> = ({
       });
       setLiveCoachInstruction('👉 Step 1: Hold the pill clearly in your palm facing the camera');
       setLiveActivityFeed([]);
-
-      // Dynamic Pillbox hardware state initialization
-      if (alreadyOpened) {
-        setIsLidOpened(true);
-        setPillboxStep('verified');
-        setPillboxLdrValue(1250);
-        setLedActive(false);
-        setBuzzerActive(false);
-      } else {
-        setIsLidOpened(false);
-        setPillboxStep('connecting');
-        setPillboxLdrValue(null);
-        setLedActive(false);
-        setBuzzerActive(false);
-      }
       setShowFirmwareDrawer(false);
       setShowSerialTerminal(false);
     } else {
       stopCameraStream();
+      if (autoTransitionTimerRef.current) {
+        clearTimeout(autoTransitionTimerRef.current);
+        autoTransitionTimerRef.current = null;
+      }
     }
-  }, [isOpen, stopCameraStream, alreadyOpened]);
+  }, [isOpen, stopCameraStream, isPillboxAlreadyVerified, isDoseFullyTaken]);
 
   // Clean up on component unmount
   useEffect(() => {
     return () => {
       stopCameraStream();
+      if (autoTransitionTimerRef.current) clearTimeout(autoTransitionTimerRef.current);
       if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
       if (preCountdownIntervalRef.current) clearInterval(preCountdownIntervalRef.current);
     };
@@ -1558,29 +1579,39 @@ export const MedicationIntakeModal: React.FC<MedicationIntakeModalProps> = ({
 
         {/* Phase Indicator Tabs */}
         <div className="flex items-center gap-2 mb-5">
-          <div className={`flex-1 py-1.5 px-3 rounded-lg text-xs font-bold flex items-center justify-center gap-1.5 transition-all ${
-            phase === 'pillbox_verification' 
-              ? 'bg-teal-600 text-white shadow-xs' 
-              : 'bg-emerald-50 text-emerald-800 border border-emerald-200'
-          }`}>
+          <button
+            type="button"
+            onClick={() => setPhase('pillbox_verification')}
+            className={`flex-1 py-1.5 px-3 rounded-lg text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
+              phase === 'pillbox_verification' 
+                ? 'bg-teal-600 text-white shadow-xs' 
+                : 'bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100'
+            }`}
+          >
             <Wifi className="w-3.5 h-3.5" />
             <span>1. Pillbox</span>
-            {phase !== 'pillbox_verification' && <Check className="w-3 h-3 text-emerald-600" />}
-          </div>
+            {isLidOpened && <Check className="w-3 h-3 text-emerald-600" />}
+          </button>
 
           <ChevronRight className="w-4 h-4 text-slate-300" />
 
-          <div className={`flex-1 py-1.5 px-3 rounded-lg text-xs font-bold flex items-center justify-center gap-1.5 transition-all ${
-            phase === 'video_capture'
-              ? 'bg-teal-600 text-white shadow-xs'
-              : phase === 'analyzing' || phase === 'video_review' || phase === 'success'
-              ? 'bg-emerald-50 text-emerald-800 border border-emerald-200'
-              : 'bg-slate-100 text-slate-400'
-          }`}>
+          <button
+            type="button"
+            onClick={() => setPhase('video_capture')}
+            className={`flex-1 py-1.5 px-3 rounded-lg text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
+              phase === 'video_capture'
+                ? 'bg-teal-600 text-white shadow-xs ring-2 ring-teal-400/50'
+                : phase === 'analyzing' || phase === 'video_review' || phase === 'success'
+                ? 'bg-emerald-50 text-emerald-800 border border-emerald-200'
+                : isLidOpened
+                ? 'bg-teal-50 text-teal-700 border border-teal-300 hover:bg-teal-100'
+                : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
+            }`}
+          >
             <Video className="w-3.5 h-3.5" />
             <span>2. Video Capture</span>
-            {(phase === 'analyzing' || phase === 'video_review' || phase === 'success') && <Check className="w-3 h-3 text-emerald-600" />}
-          </div>
+            {(phase === 'analyzing' || phase === 'video_review' || phase === 'success' || verificationResult?.verified) && <Check className="w-3 h-3 text-emerald-600" />}
+          </button>
 
           <ChevronRight className="w-4 h-4 text-slate-300" />
 
@@ -1643,6 +1674,33 @@ export const MedicationIntakeModal: React.FC<MedicationIntakeModalProps> = ({
         {/* ======================================================== */}
         {phase === 'pillbox_verification' && (
           <div className="space-y-5 animate-in fade-in duration-200">
+            {/* Real-time Pillbox Intake Verified Auto-Advance Alert */}
+            {isLidOpened && (
+              <div className="p-3.5 rounded-2xl bg-emerald-50 border-2 border-emerald-400 text-emerald-950 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-md shadow-emerald-500/10 animate-in fade-in duration-150">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-xs">
+                    <Check className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-xs text-emerald-900">
+                      Step 1 Complete: Physical Pillbox Intake Confirmed!
+                    </p>
+                    <p className="text-[11px] text-emerald-700">
+                      Compartment {targetCompartmentNumber} lid opened. Launching AI Video Verification camera...
+                    </p>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setPhase('video_capture')}
+                  className="w-full sm:w-auto px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs shadow-md transition-all shrink-0 cursor-pointer flex items-center justify-center gap-1.5"
+                >
+                  <Camera className="w-3.5 h-3.5" />
+                  <span>Open Video Camera Now &rarr;</span>
+                </button>
+              </div>
+            )}
+
             {/* Pillbox Status Header Card */}
             <div className="p-4 rounded-2xl bg-gradient-to-r from-teal-500/10 via-cyan-500/10 to-teal-500/5 border border-teal-200/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-left">
               <div className="flex items-center gap-3">
@@ -1899,30 +1957,21 @@ export const MedicationIntakeModal: React.FC<MedicationIntakeModalProps> = ({
                 </button>
               </div>
 
-              {/* Gated Continue Button to Video Capture */}
+              {/* Gated / Direct Continue Button to Video Capture */}
               <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
-                {!isLidOpened ? (
-                  <button
-                    type="button"
-                    id="continue-to-video-capture-btn"
-                    disabled={true}
-                    className="w-full sm:w-auto px-5 py-2.5 rounded-xl text-xs font-semibold bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed flex items-center justify-center gap-2 transition-all opacity-80"
-                    title="Physical pillbox intake must be verified first before AI video verification unlocks."
-                  >
-                    <Lock className="w-3.5 h-3.5 text-slate-400" />
-                    <span>AI Video Verification (Locked)</span>
-                  </button>
-                ) : (
-                  <button
-                    type="button"
-                    id="continue-to-video-capture-btn"
-                    onClick={() => setPhase('video_capture')}
-                    className="w-full sm:w-auto px-6 py-3 rounded-xl text-xs font-black bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500 hover:from-emerald-700 hover:to-teal-700 text-white shadow-xl shadow-emerald-600/35 ring-4 ring-emerald-400/50 transform hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer animate-pulse"
-                  >
-                    <Camera className="w-4 h-4" />
-                    <span>Proceed to AI Video Verification &rarr;</span>
-                  </button>
-                )}
+                <button
+                  type="button"
+                  id="continue-to-video-capture-btn"
+                  onClick={() => setPhase('video_capture')}
+                  className={`w-full sm:w-auto px-6 py-3 rounded-xl text-xs font-black transition-all flex items-center justify-center gap-2 cursor-pointer ${
+                    isLidOpened
+                      ? 'bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500 hover:from-emerald-700 hover:to-teal-700 text-white shadow-xl shadow-emerald-600/35 ring-4 ring-emerald-400/50 transform hover:scale-105 active:scale-95 animate-pulse'
+                      : 'bg-teal-600 hover:bg-teal-700 text-white shadow-md'
+                  }`}
+                >
+                  <Camera className="w-4 h-4" />
+                  <span>Proceed to AI Video Verification &rarr;</span>
+                </button>
               </div>
             </div>
 
