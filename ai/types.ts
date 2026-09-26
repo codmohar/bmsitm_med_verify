@@ -10,6 +10,7 @@ export interface VideoVerificationRequest {
   realtimeTimestamps?: Partial<VerificationTimestamps>;
   expectedMedicineName?: string;
   patientName?: string;
+  patientId?: string;
   doseSlot?: string;
   providerPreference?: 'auto' | 'gemini' | 'openai' | 'huggingface' | 'computer_vision';
 }

@@ -347,8 +347,8 @@ export const Page7PatientProfile = ({
 
       {/* Device Status Card with Dynamic ESP32 Firmware */}
       <DeviceStatusCard 
-        device={patient.deviceStatusDetails} 
-        verificationMethod={patient.verificationMethod}
+        device={patient?.deviceStatusDetails} 
+        verificationMethod={patient?.verificationMethod}
         patient={patient}
       />
 

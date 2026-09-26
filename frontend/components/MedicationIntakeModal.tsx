@@ -917,6 +917,46 @@ export const MedicationIntakeModal: React.FC<MedicationIntakeModalProps> = ({
     };
   }, [stopCameraStream]);
 
+  // === WhatsApp Notification: Send when "MEDICINE TAKEN ✓" is displayed on the page ===
+  const whatsappSentRef = useRef<boolean>(false);
+  useEffect(() => {
+    if (
+      phase === 'video_review' &&
+      verificationResult &&
+      verificationResult.status === 'MEDICINE_TAKEN' &&
+      verificationResult.verified === true &&
+      !whatsappSentRef.current
+    ) {
+      whatsappSentRef.current = true;
+      console.log('[DoseSure] MEDICINE TAKEN ✓ displayed — sending WhatsApp notification...');
+      
+      fetch('/api/whatsapp/notify-verification-done', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          patientName: patient.fullName || 'Patient',
+          doseSlot: slot || 'Scheduled',
+        }),
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data.success) {
+            console.log('[DoseSure] ✅ WhatsApp notification sent successfully! SID:', data.messageSid);
+          } else {
+            console.warn('[DoseSure] WhatsApp notification skipped:', data.skippedReason || data.error);
+          }
+        })
+        .catch(err => {
+          console.error('[DoseSure] WhatsApp notification error:', err);
+        });
+    }
+
+    // Reset the flag when verification result is cleared (e.g., retake video)
+    if (!verificationResult || verificationResult.status !== 'MEDICINE_TAKEN') {
+      whatsappSentRef.current = false;
+    }
+  }, [phase, verificationResult, patient.fullName, slot]);
+
   // Simulated Camera Stream using HTML5 Canvas
   const setupSimulatedCameraStream = useCallback(() => {
     stopCameraStream();
@@ -1341,6 +1381,7 @@ export const MedicationIntakeModal: React.FC<MedicationIntakeModalProps> = ({
           mimeType: mimeType || blob.type || 'video/webm',
           expectedMedicineName: patient.medicationName,
           patientName: patient.fullName,
+          patientId: patient.id,
           doseSlot: slot,
           providerPreference: 'auto',
         }),

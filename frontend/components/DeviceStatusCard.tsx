@@ -4,7 +4,7 @@ import { Cpu, Camera, Wifi, Battery, BatteryCharging, RefreshCw, Layers, Code, C
 import { generatePatientESP32Code } from '../utils/helpers';
 
 interface DeviceStatusCardProps {
-  device: DeviceStatus;
+  device?: DeviceStatus;
   verificationMethod?: string;
   patient?: Patient;
 }
@@ -14,10 +14,20 @@ export const DeviceStatusCard: React.FC<DeviceStatusCardProps> = ({
   verificationMethod,
   patient 
 }) => {
+  const dev: DeviceStatus = device || {
+    deviceId: patient?.pillboxId || 'BOX01',
+    esp32Status: (patient?.esp32Status as any) || 'Online',
+    cameraStatus: 'Active',
+    internetStatus: 'Connected (WiFi)',
+    lastSync: 'Device active',
+    batteryPercentage: 98,
+    firmwareVersion: 'v2.4.1-esp32-cv',
+    compartmentCount: patient?.compartments || 14,
+  };
   const [showFirmware, setShowFirmware] = useState(false);
   const [copied, setCopied] = useState(false);
-  const isOnline = device.esp32Status === 'Online';
-  const isBatteryLow = device.batteryPercentage < 20;
+  const isOnline = dev.esp32Status === 'Online';
+  const isBatteryLow = dev.batteryPercentage < 20;
 
   const handleCopy = () => {
     if (!patient) return;
@@ -51,7 +61,7 @@ export const DeviceStatusCard: React.FC<DeviceStatusCardProps> = ({
           <div>
             <h4 className="text-sm font-bold text-slate-900">Assigned Smart Device</h4>
             <span className="font-mono text-xs font-semibold text-teal-700">
-              {device.deviceId}
+              {dev.deviceId}
             </span>
           </div>
         </div>
@@ -63,7 +73,7 @@ export const DeviceStatusCard: React.FC<DeviceStatusCardProps> = ({
               : 'bg-rose-50 text-rose-700 border-rose-200'
           }`}>
             <span className={`w-2 h-2 rounded-full ${isOnline ? 'bg-emerald-500 animate-pulse' : 'bg-rose-500'}`} />
-            ESP32 {device.esp32Status}
+            ESP32 {dev.esp32Status}
           </span>
         </div>
       </div>
@@ -76,7 +86,7 @@ export const DeviceStatusCard: React.FC<DeviceStatusCardProps> = ({
             <span className="font-medium">Firmware</span>
           </div>
           <span className="font-mono font-bold text-slate-800 text-[11px] block truncate">
-            {device.firmwareVersion}
+            {dev.firmwareVersion}
           </span>
         </div>
 
@@ -87,9 +97,9 @@ export const DeviceStatusCard: React.FC<DeviceStatusCardProps> = ({
             <span className="font-medium">Camera CV</span>
           </div>
           <span className={`font-bold text-xs ${
-            device.cameraStatus === 'Active' ? 'text-teal-700' : 'text-slate-600'
+            dev.cameraStatus === 'Active' ? 'text-teal-700' : 'text-slate-600'
           }`}>
-            {device.cameraStatus}
+            {dev.cameraStatus}
           </span>
         </div>
 
@@ -100,7 +110,7 @@ export const DeviceStatusCard: React.FC<DeviceStatusCardProps> = ({
             <span className="font-medium">Internet Status</span>
           </div>
           <span className="font-bold text-slate-800 text-xs truncate block">
-            {device.internetStatus}
+            {dev.internetStatus}
           </span>
         </div>
 
@@ -116,11 +126,11 @@ export const DeviceStatusCard: React.FC<DeviceStatusCardProps> = ({
                 className={`h-full rounded-full ${
                   isBatteryLow ? 'bg-rose-500' : 'bg-emerald-500'
                 }`}
-                style={{ width: `${device.batteryPercentage}%` }}
+                style={{ width: `${dev.batteryPercentage}%` }}
               />
             </div>
             <span className="font-mono font-bold text-slate-800">
-              {device.batteryPercentage}%
+              {dev.batteryPercentage}%
             </span>
           </div>
         </div>
@@ -132,7 +142,7 @@ export const DeviceStatusCard: React.FC<DeviceStatusCardProps> = ({
             <span className="font-medium">Compartments</span>
           </div>
           <span className="font-bold text-slate-800 text-xs">
-            {device.compartmentCount} Slots (Multi-day)
+            {dev.compartmentCount} Slots (Multi-day)
           </span>
         </div>
 
@@ -143,7 +153,7 @@ export const DeviceStatusCard: React.FC<DeviceStatusCardProps> = ({
             <span className="font-medium">Last Sync</span>
           </div>
           <span className="font-bold text-slate-800 text-xs truncate block">
-            {device.lastSync}
+            {dev.lastSync}
           </span>
         </div>
       </div>

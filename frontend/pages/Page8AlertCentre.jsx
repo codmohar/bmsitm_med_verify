@@ -36,9 +36,9 @@ export const Page8AlertCentre = ({
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase();
       return (
-        alert.patientName.toLowerCase().includes(q) ||
-        alert.patientId.toLowerCase().includes(q) ||
-        alert.statusDescription.toLowerCase().includes(q)
+        (alert?.patientName || '').toLowerCase().includes(q) ||
+        (alert?.patientId || '').toLowerCase().includes(q) ||
+        (alert?.statusDescription || '').toLowerCase().includes(q)
       );
     }
     return true;

@@ -1341,6 +1341,7 @@ export const MedicationIntakeModal: React.FC<MedicationIntakeModalProps> = ({
           mimeType: mimeType || blob.type || 'video/webm',
           expectedMedicineName: patient.medicationName,
           patientName: patient.fullName,
+          patientId: patient.id,
           doseSlot: slot,
           providerPreference: 'auto',
         }),

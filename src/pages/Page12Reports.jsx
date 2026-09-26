@@ -21,11 +21,12 @@ export const Page12Reports = ({
   const [reportPeriod, setReportPeriod] = useState('SEP_2026');
 
   // Compute stats
-  const total = patients.length;
-  const avgAdherence = Math.round(
-    patients.reduce((acc, p) => acc + p.adherencePercentage, 0) / (total || 1)
-  );
-  const compliantCount = patients.filter((p) => p.adherencePercentage >= 90).length;
+  const patientList = Array.isArray(patients) ? patients : [];
+  const total = patientList.length;
+  const avgAdherence = total > 0
+    ? Math.round(patientList.reduce((acc, p) => acc + (p?.adherencePercentage || 0), 0) / total)
+    : 100;
+  const compliantCount = patientList.filter((p) => (p?.adherencePercentage ?? 0) >= 90).length;
 
   const handlePrint = () => {
     window.print();

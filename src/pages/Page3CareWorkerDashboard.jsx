@@ -19,21 +19,25 @@ import { AdherenceChart } from '../components/AdherenceChart';
 
 export const Page3CareWorkerDashboard = ({
   careWorker,
-  patients,
-  alerts,
+  patients = [],
+  alerts = [],
   onNavigate,
   onSelectPatient,
 }) => {
-  const totalPatients = patients.length;
-  const onTrackCount = patients.filter((p) => p.status === 'On Track').length;
-  const lateCount = patients.filter((p) => p.status === 'Late').length;
-  const missedCount = patients.filter((p) => p.status === 'Missed Dose').length;
-  const attentionCount = patients.filter((p) => p.status === 'Requires Attention').length;
+  const patientList = Array.isArray(patients) ? patients : [];
+  const alertList = Array.isArray(alerts) ? alerts : [];
+  const totalPatients = patientList.length;
+  const onTrackCount = patientList.filter((p) => p?.status === 'On Track').length;
+  const lateCount = patientList.filter((p) => p?.status === 'Late').length;
+  const missedCount = patientList.filter((p) => p?.status === 'Missed Dose').length;
+  const attentionCount = patientList.filter((p) => p?.status === 'Requires Attention').length;
 
-  const activeAlerts = alerts.filter((a) => !a.isReviewed);
-  const avgAdherence = Math.round(
-    patients.reduce((acc, p) => acc + p.adherencePercentage, 0) / (totalPatients || 1)
-  );
+  const activeAlerts = alertList.filter((a) => !a?.isReviewed);
+  const avgAdherence = totalPatients > 0
+    ? Math.round(
+        patientList.reduce((acc, p) => acc + (p?.adherencePercentage || 0), 0) / totalPatients
+      )
+    : 100;
 
   return (
     <div className="space-y-6">
@@ -51,7 +55,7 @@ export const Page3CareWorkerDashboard = ({
             </span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            Good Morning, {careWorker.name}
+            Good Morning, {careWorker?.name || 'Dr. Ananya Sharma'}
           </h1>
           <p className="text-sm sm:text-base text-slate-600 font-medium mt-1">
             “Here’s your patient medication adherence overview.”
@@ -168,7 +172,7 @@ export const Page3CareWorkerDashboard = ({
           </div>
           <div className="flex items-baseline gap-2">
             <span className="text-3xl font-black text-slate-900">
-              {patients.filter(p => p.deviceStatusDetails.esp32Status === 'Online').length}/{totalPatients}
+              {patientList.filter(p => (p?.deviceStatusDetails?.esp32Status || p?.esp32Status || 'Online') === 'Online').length}/{totalPatients}
             </span>
             <span className="text-xs font-semibold text-emerald-600">
               Devices Live
@@ -223,8 +227,8 @@ export const Page3CareWorkerDashboard = ({
             </div>
 
             <div className="space-y-3">
-              {patients
-                .filter(p => p.status !== 'On Track')
+              {patientList
+                .filter(p => (p?.status || 'On Track') !== 'On Track')
                 .slice(0, 3)
                 .map((patient) => (
                   <div
@@ -233,26 +237,26 @@ export const Page3CareWorkerDashboard = ({
                     className="p-3 rounded-2xl bg-white/70 hover:bg-white border border-slate-200/70 transition-all cursor-pointer shadow-xs"
                   >
                     <div className="flex items-center justify-between mb-1.5">
-                      <span className="font-bold text-xs text-slate-900">{patient.fullName}</span>
+                      <span className="font-bold text-xs text-slate-900">{patient?.fullName || 'Patient'}</span>
                       <span className="font-mono text-[10px] font-bold text-teal-700 bg-teal-50 px-1.5 py-0.5 rounded">
                         {patient.id}
                       </span>
                     </div>
                     <div className="text-[11px] text-slate-600 truncate mb-2">
-                      {patient.treatment}
+                      {patient?.treatment || 'DOTS Therapy'}
                     </div>
                     <div className="flex items-center justify-between text-xs pt-1 border-t border-slate-100">
                       <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${
-                        patient.status === 'Missed Dose'
+                        patient?.status === 'Missed Dose'
                           ? 'bg-rose-50 text-rose-700 border-rose-200'
-                          : patient.status === 'Late'
+                          : patient?.status === 'Late'
                           ? 'bg-amber-50 text-amber-700 border-amber-200'
                           : 'bg-purple-50 text-purple-700 border-purple-200'
                       }`}>
-                        {patient.status}
+                        {patient?.status || 'Active'}
                       </span>
                       <span className="text-[11px] font-bold text-slate-800">
-                        {patient.adherencePercentage}% Adherence
+                        {patient?.adherencePercentage ?? 100}% Adherence
                       </span>
                     </div>
                   </div>
@@ -300,10 +304,10 @@ export const Page3CareWorkerDashboard = ({
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
-              {patients.slice(0, 4).map((p) => {
-                const dose = p.todayDoses[0] || {
+              {patientList.slice(0, 4).map((p) => {
+                const dose = (p?.todayDoses && p.todayDoses[0]) || {
                   slot: 'Morning',
-                  scheduledTime: '08:00 AM',
+                  scheduledTime: (p?.prescribedTimes && p.prescribedTimes[0]) || '08:00 AM',
                   timingStatus: 'ON_TIME',
                   verificationEvidence: 'INGESTION_CONSISTENT',
                 };
@@ -311,7 +315,7 @@ export const Page3CareWorkerDashboard = ({
                 return (
                   <tr key={p.id} className="hover:bg-white/60 transition-colors">
                     <td className="py-3 px-3">
-                      <span className="font-bold text-slate-900 block">{p.fullName}</span>
+                      <span className="font-bold text-slate-900 block">{p?.fullName || 'Patient'}</span>
                       <span className="font-mono text-[10px] text-teal-700">{p.id}</span>
                     </td>
                     <td className="py-3 px-3">
@@ -325,7 +329,7 @@ export const Page3CareWorkerDashboard = ({
                       <VerificationBadge evidence={dose.verificationEvidence} size="sm" />
                     </td>
                     <td className="py-3 px-3 font-mono font-semibold text-slate-700">
-                      {p.pillboxId}
+                      {p?.pillboxId || 'DSBOX-01'}
                     </td>
                     <td className="py-3 px-3 text-right">
                       <button

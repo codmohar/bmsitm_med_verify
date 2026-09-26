@@ -23,16 +23,18 @@ export const PatientTable: React.FC<PatientTableProps> = ({
   const [dischargeReason, setDischargeReason] = useState('Medicare / DOTS Treatment Completed (Cured)');
   const [confirmChecked, setConfirmChecked] = useState(false);
 
-  const filteredPatients = patients.filter((patient) => {
+  const patientList = Array.isArray(patients) ? patients : [];
+
+  const filteredPatients = patientList.filter((patient) => {
     const matchesSearch = 
-      patient.fullName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      patient.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      patient.treatment.toLowerCase().includes(searchTerm.toLowerCase());
+      (patient?.fullName || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
+      (patient?.id || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
+      (patient?.treatment || '').toLowerCase().includes(searchTerm.toLowerCase());
 
     if (!matchesSearch) return false;
 
     if (selectedFilter === 'All') return true;
-    return patient.status === selectedFilter;
+    return (patient?.status || 'On Track') === selectedFilter;
   });
 
   return (
@@ -168,14 +170,14 @@ export const PatientTable: React.FC<PatientTableProps> = ({
                       <td className="py-3.5 px-4">
                         <div className="flex items-center gap-2.5">
                           <div className="w-7 h-7 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center font-bold text-xs uppercase">
-                            {patient.fullName.charAt(0)}
+                            {(patient?.fullName || 'P').charAt(0)}
                           </div>
                           <div>
                             <div className="font-bold text-slate-900 group-hover:text-teal-700 transition-colors">
-                              {patient.fullName}
+                              {patient?.fullName || 'Patient'}
                             </div>
                             <div className="text-[10px] text-slate-500">
-                              {patient.gender} • {patient.phoneNumber || 'No phone'}
+                              {patient?.gender || 'Patient'} • {patient?.phoneNumber || 'No phone'}
                             </div>
                           </div>
                         </div>

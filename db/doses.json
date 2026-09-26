@@ -1,5 +1,1523 @@
 [
   {
+    "id": "rec-1790383177669",
+    "date": "26 Sept",
+    "scheduledTime": "03:10 AM",
+    "eventTime": "06:09 AM",
+    "doseSlot": "Evening",
+    "timingStatus": "ON_TIME",
+    "verificationEvidence": "INGESTION_CONSISTENT",
+    "pillboxVerified": true,
+    "aiVerified": true,
+    "deviceId": "DSBOX-11",
+    "alertSent": false,
+    "notes": "AI Video Verification: The patient clearly presents the pill to the camera in Frame 2, moves the hand containing the pill toward the mouth in Frame 3, performs an ingestion action at the mouth in Frame 4, and shows an empty hand in Frame 5 and 6, confirming the completion of the 5-state protocol. (Confidence: 100%)",
+    "aiVerificationResult": {
+      "status": "MEDICINE_TAKEN",
+      "verified": true,
+      "confidence": 1,
+      "sequence_valid": true,
+      "events": {
+        "medicine_detected": true,
+        "medicine_to_mouth": true,
+        "mouth_interaction": true,
+        "hand_empty": true,
+        "water_intake": false
+      },
+      "timestamps": {
+        "hand_empty": "00:08",
+        "medicine_detected": "00:02",
+        "medicine_to_mouth": "00:04",
+        "mouth_interaction": "00:06",
+        "water_intake": "N/A"
+      },
+      "step_confidences": {
+        "medicine_confidence": 1,
+        "hand_to_mouth_confidence": 0.94,
+        "mouth_interaction_confidence": 1,
+        "hand_empty_confidence": 1,
+        "water_confidence": 0.3
+      },
+      "medicine_details": {
+        "detected_name": "4-FDC (Rifampicin + Isoniazid + Pyrazinamide + Ethambutol)",
+        "appearance": "Solid oral medication detected in palm/fingers",
+        "color": "White/off-white",
+        "shape": "Round tablet/capsule",
+        "confidence": 0.92,
+        "notes": "Pill detected in hand, gesture tracked to mouth, palm confirmed empty.",
+        "hand_pill_detected": true
+      },
+      "failed_step": null,
+      "explanation": "The patient clearly presents the pill to the camera in Frame 2, moves the hand containing the pill toward the mouth in Frame 3, performs an ingestion action at the mouth in Frame 4, and shows an empty hand in Frame 5 and 6, confirming the completion of the 5-state protocol.",
+      "message": "Medication successfully verified as taken.",
+      "model_used": "Clinical AI Vision Engine",
+      "ai_provider": "gemini"
+    }
+  },
+  {
+    "id": "rec-1790383177663",
+    "date": "26 Sept",
+    "scheduledTime": "03:10 AM",
+    "eventTime": "06:09 AM",
+    "doseSlot": "Evening",
+    "timingStatus": "ON_TIME",
+    "verificationEvidence": "INGESTION_CONSISTENT",
+    "pillboxVerified": true,
+    "aiVerified": true,
+    "deviceId": "DSBOX-11",
+    "alertSent": false,
+    "notes": "AI Video Verification: The patient clearly presents the pill to the camera in Frame 2, moves the hand containing the pill toward the mouth in Frame 3, performs an ingestion action at the mouth in Frame 4, and shows an empty hand in Frame 5 and 6, confirming the completion of the 5-state protocol. (Confidence: 100%)",
+    "aiVerificationResult": {
+      "status": "MEDICINE_TAKEN",
+      "verified": true,
+      "confidence": 1,
+      "sequence_valid": true,
+      "events": {
+        "medicine_detected": true,
+        "medicine_to_mouth": true,
+        "mouth_interaction": true,
+        "hand_empty": true,
+        "water_intake": false
+      },
+      "timestamps": {
+        "hand_empty": "00:08",
+        "medicine_detected": "00:02",
+        "medicine_to_mouth": "00:04",
+        "mouth_interaction": "00:06",
+        "water_intake": "N/A"
+      },
+      "step_confidences": {
+        "medicine_confidence": 1,
+        "hand_to_mouth_confidence": 0.94,
+        "mouth_interaction_confidence": 1,
+        "hand_empty_confidence": 1,
+        "water_confidence": 0.3
+      },
+      "medicine_details": {
+        "detected_name": "4-FDC (Rifampicin + Isoniazid + Pyrazinamide + Ethambutol)",
+        "appearance": "Solid oral medication detected in palm/fingers",
+        "color": "White/off-white",
+        "shape": "Round tablet/capsule",
+        "confidence": 0.92,
+        "notes": "Pill detected in hand, gesture tracked to mouth, palm confirmed empty.",
+        "hand_pill_detected": true
+      },
+      "failed_step": null,
+      "explanation": "The patient clearly presents the pill to the camera in Frame 2, moves the hand containing the pill toward the mouth in Frame 3, performs an ingestion action at the mouth in Frame 4, and shows an empty hand in Frame 5 and 6, confirming the completion of the 5-state protocol.",
+      "message": "Medication successfully verified as taken.",
+      "model_used": "Clinical AI Vision Engine",
+      "ai_provider": "gemini"
+    }
+  },
+  {
+    "id": "rec-1790383081428",
+    "date": "26 Sept",
+    "scheduledTime": "03:10 AM",
+    "eventTime": "06:08 AM",
+    "doseSlot": "Evening",
+    "timingStatus": "ON_TIME",
+    "verificationEvidence": "INGESTION_CONSISTENT",
+    "pillboxVerified": true,
+    "aiVerified": true,
+    "deviceId": "DSBOX-11",
+    "alertSent": false,
+    "notes": "AI Video Verification: The patient clearly presented the medication in frame 2, brought it to the mouth in frames 3-4, interacted with the mouth, and displayed an empty hand in frame 5-6, completing the required sequence for adherence verification. (Confidence: 100%)",
+    "aiVerificationResult": {
+      "status": "MEDICINE_TAKEN",
+      "verified": true,
+      "confidence": 1,
+      "sequence_valid": true,
+      "events": {
+        "medicine_detected": true,
+        "medicine_to_mouth": true,
+        "mouth_interaction": true,
+        "hand_empty": true,
+        "water_intake": false
+      },
+      "timestamps": {
+        "hand_empty": "00:07",
+        "medicine_detected": "00:03",
+        "medicine_to_mouth": "00:04",
+        "mouth_interaction": "00:06",
+        "water_intake": "N/A"
+      },
+      "step_confidences": {
+        "medicine_confidence": 1,
+        "hand_to_mouth_confidence": 0.94,
+        "mouth_interaction_confidence": 1,
+        "hand_empty_confidence": 1,
+        "water_confidence": 0.3
+      },
+      "medicine_details": {
+        "detected_name": "4-FDC (Rifampicin + Isoniazid + Pyrazinamide + Ethambutol)",
+        "appearance": "Solid oral medication detected in palm/fingers",
+        "color": "White/off-white",
+        "shape": "Round tablet/capsule",
+        "confidence": 0.92,
+        "notes": "Pill detected in hand, gesture tracked to mouth, palm confirmed empty.",
+        "hand_pill_detected": true
+      },
+      "failed_step": null,
+      "explanation": "The patient clearly presented the medication in frame 2, brought it to the mouth in frames 3-4, interacted with the mouth, and displayed an empty hand in frame 5-6, completing the required sequence for adherence verification.",
+      "message": "Medication successfully verified: All steps of the ingestion protocol were completed.",
+      "model_used": "Clinical AI Vision Engine",
+      "ai_provider": "gemini"
+    }
+  },
+  {
+    "id": "rec-1790383081423",
+    "date": "26 Sept",
+    "scheduledTime": "03:10 AM",
+    "eventTime": "06:08 AM",
+    "doseSlot": "Evening",
+    "timingStatus": "ON_TIME",
+    "verificationEvidence": "INGESTION_CONSISTENT",
+    "pillboxVerified": true,
+    "aiVerified": true,
+    "deviceId": "DSBOX-11",
+    "alertSent": false,
+    "notes": "AI Video Verification: The patient clearly presented the medication in frame 2, brought it to the mouth in frames 3-4, interacted with the mouth, and displayed an empty hand in frame 5-6, completing the required sequence for adherence verification. (Confidence: 100%)",
+    "aiVerificationResult": {
+      "status": "MEDICINE_TAKEN",
+      "verified": true,
+      "confidence": 1,
+      "sequence_valid": true,
+      "events": {
+        "medicine_detected": true,
+        "medicine_to_mouth": true,
+        "mouth_interaction": true,
+        "hand_empty": true,
+        "water_intake": false
+      },
+      "timestamps": {
+        "hand_empty": "00:07",
+        "medicine_detected": "00:03",
+        "medicine_to_mouth": "00:04",
+        "mouth_interaction": "00:06",
+        "water_intake": "N/A"
+      },
+      "step_confidences": {
+        "medicine_confidence": 1,
+        "hand_to_mouth_confidence": 0.94,
+        "mouth_interaction_confidence": 1,
+        "hand_empty_confidence": 1,
+        "water_confidence": 0.3
+      },
+      "medicine_details": {
+        "detected_name": "4-FDC (Rifampicin + Isoniazid + Pyrazinamide + Ethambutol)",
+        "appearance": "Solid oral medication detected in palm/fingers",
+        "color": "White/off-white",
+        "shape": "Round tablet/capsule",
+        "confidence": 0.92,
+        "notes": "Pill detected in hand, gesture tracked to mouth, palm confirmed empty.",
+        "hand_pill_detected": true
+      },
+      "failed_step": null,
+      "explanation": "The patient clearly presented the medication in frame 2, brought it to the mouth in frames 3-4, interacted with the mouth, and displayed an empty hand in frame 5-6, completing the required sequence for adherence verification.",
+      "message": "Medication successfully verified: All steps of the ingestion protocol were completed.",
+      "model_used": "Clinical AI Vision Engine",
+      "ai_provider": "gemini"
+    }
+  },
+  {
+    "id": "rec-hw-1790383001453",
+    "patientId": "DS-TB-1030",
+    "date": "26 Sept",
+    "scheduledTime": "08:00 AM",
+    "eventTime": "2026-09-26T06:06:42+05:30",
+    "doseSlot": "Morning",
+    "timingStatus": "PENDING",
+    "verificationEvidence": "ACCESS_VERIFIED",
+    "pillboxVerified": true,
+    "aiVerified": false,
+    "deviceId": "BOX01",
+    "alertSent": false,
+    "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 1648). Awaiting AI video verification.",
+    "aiVerificationResult": {
+      "verified": false,
+      "confidence": 0.5,
+      "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 1648). Patient must complete 20s AI video verification to confirm dose taken."
+    }
+  },
+  {
+    "id": "rec-1790382828238",
+    "date": "26 Sept",
+    "scheduledTime": "03:10 AM",
+    "eventTime": "06:03 AM",
+    "doseSlot": "Evening",
+    "timingStatus": "ON_TIME",
+    "verificationEvidence": "INGESTION_CONSISTENT",
+    "pillboxVerified": true,
+    "aiVerified": true,
+    "deviceId": "DSBOX-11",
+    "alertSent": false,
+    "notes": "AI Video Verification: The patient clearly presented a pill in their hand, brought it to their mouth, engaged in ingestion, and displayed an empty hand immediately afterward, confirming all required steps of the ingestion protocol. (Confidence: 100%)",
+    "aiVerificationResult": {
+      "status": "MEDICINE_TAKEN",
+      "verified": true,
+      "confidence": 1,
+      "sequence_valid": true,
+      "events": {
+        "medicine_detected": true,
+        "medicine_to_mouth": true,
+        "mouth_interaction": true,
+        "hand_empty": true,
+        "water_intake": false
+      },
+      "timestamps": {
+        "hand_empty": "00:07",
+        "medicine_detected": "00:00",
+        "medicine_to_mouth": "00:02",
+        "mouth_interaction": "00:04",
+        "water_intake": "none"
+      },
+      "step_confidences": {
+        "medicine_confidence": 1,
+        "hand_to_mouth_confidence": 1,
+        "mouth_interaction_confidence": 1,
+        "hand_empty_confidence": 1,
+        "water_confidence": 1
+      },
+      "medicine_details": {
+        "detected_name": "4-FDC (Rifampicin + Isoniazid + Pyrazinamide + Ethambutol)",
+        "appearance": "small round solid pill",
+        "color": "orange",
+        "shape": "round",
+        "confidence": 1,
+        "notes": "Pill is clearly visible in fingers before move to mouth.",
+        "hand_pill_detected": true
+      },
+      "failed_step": null,
+      "explanation": "The patient clearly presented a pill in their hand, brought it to their mouth, engaged in ingestion, and displayed an empty hand immediately afterward, confirming all required steps of the ingestion protocol.",
+      "message": "The patient has successfully completed the medicine intake process.",
+      "model_used": "Clinical AI Vision Engine",
+      "ai_provider": "gemini"
+    }
+  },
+  {
+    "id": "rec-1790382828234",
+    "date": "26 Sept",
+    "scheduledTime": "03:10 AM",
+    "eventTime": "06:03 AM",
+    "doseSlot": "Evening",
+    "timingStatus": "ON_TIME",
+    "verificationEvidence": "INGESTION_CONSISTENT",
+    "pillboxVerified": true,
+    "aiVerified": true,
+    "deviceId": "DSBOX-11",
+    "alertSent": false,
+    "notes": "AI Video Verification: The patient clearly presented a pill in their hand, brought it to their mouth, engaged in ingestion, and displayed an empty hand immediately afterward, confirming all required steps of the ingestion protocol. (Confidence: 100%)",
+    "aiVerificationResult": {
+      "status": "MEDICINE_TAKEN",
+      "verified": true,
+      "confidence": 1,
+      "sequence_valid": true,
+      "events": {
+        "medicine_detected": true,
+        "medicine_to_mouth": true,
+        "mouth_interaction": true,
+        "hand_empty": true,
+        "water_intake": false
+      },
+      "timestamps": {
+        "hand_empty": "00:07",
+        "medicine_detected": "00:00",
+        "medicine_to_mouth": "00:02",
+        "mouth_interaction": "00:04",
+        "water_intake": "none"
+      },
+      "step_confidences": {
+        "medicine_confidence": 1,
+        "hand_to_mouth_confidence": 1,
+        "mouth_interaction_confidence": 1,
+        "hand_empty_confidence": 1,
+        "water_confidence": 1
+      },
+      "medicine_details": {
+        "detected_name": "4-FDC (Rifampicin + Isoniazid + Pyrazinamide + Ethambutol)",
+        "appearance": "small round solid pill",
+        "color": "orange",
+        "shape": "round",
+        "confidence": 1,
+        "notes": "Pill is clearly visible in fingers before move to mouth.",
+        "hand_pill_detected": true
+      },
+      "failed_step": null,
+      "explanation": "The patient clearly presented a pill in their hand, brought it to their mouth, engaged in ingestion, and displayed an empty hand immediately afterward, confirming all required steps of the ingestion protocol.",
+      "message": "The patient has successfully completed the medicine intake process.",
+      "model_used": "Clinical AI Vision Engine",
+      "ai_provider": "gemini"
+    }
+  },
+  {
+    "id": "rec-hw-1790382671899",
+    "patientId": "DS-TB-1030",
+    "date": "26 Sept",
+    "scheduledTime": "08:00 AM",
+    "eventTime": "2026-09-26T06:01:12+05:30",
+    "doseSlot": "Morning",
+    "timingStatus": "PENDING",
+    "verificationEvidence": "ACCESS_VERIFIED",
+    "pillboxVerified": true,
+    "aiVerified": false,
+    "deviceId": "BOX01",
+    "alertSent": false,
+    "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 1229). Awaiting AI video verification.",
+    "aiVerificationResult": {
+      "verified": false,
+      "confidence": 0.5,
+      "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 1229). Patient must complete 20s AI video verification to confirm dose taken."
+    }
+  },
+  {
+    "id": "rec-1790382450050",
+    "date": "26 Sept",
+    "scheduledTime": "03:10 AM",
+    "eventTime": "05:57 AM",
+    "doseSlot": "Evening",
+    "timingStatus": "ON_TIME",
+    "verificationEvidence": "INGESTION_CONSISTENT",
+    "pillboxVerified": true,
+    "aiVerified": true,
+    "deviceId": "DSBOX-11",
+    "alertSent": false,
+    "notes": "AI Video Verification: The patient clearly presented the orange medication in their fingers at timestamp 00:03, successfully moved it to their mouth, performed an ingestion action, and subsequently displayed an empty hand to verify the medication was consumed. (Confidence: 100%)",
+    "aiVerificationResult": {
+      "status": "MEDICINE_TAKEN",
+      "verified": true,
+      "confidence": 1,
+      "sequence_valid": true,
+      "events": {
+        "medicine_detected": true,
+        "medicine_to_mouth": true,
+        "mouth_interaction": true,
+        "hand_empty": true,
+        "water_intake": false
+      },
+      "timestamps": {
+        "hand_empty": "00:08",
+        "medicine_detected": "00:03",
+        "medicine_to_mouth": "00:04",
+        "mouth_interaction": "00:06",
+        "water_intake": "N/A"
+      },
+      "step_confidences": {
+        "medicine_confidence": 1,
+        "hand_to_mouth_confidence": 0.94,
+        "mouth_interaction_confidence": 1,
+        "hand_empty_confidence": 1,
+        "water_confidence": 0.3
+      },
+      "medicine_details": {
+        "detected_name": "4-FDC (Rifampicin + Isoniazid + Pyrazinamide + Ethambutol)",
+        "appearance": "Orange tablet",
+        "color": "Orange",
+        "shape": "Round",
+        "confidence": 1,
+        "notes": "Pill detected in hand, gesture tracked to mouth, palm confirmed empty.",
+        "hand_pill_detected": true
+      },
+      "failed_step": null,
+      "explanation": "The patient clearly presented the orange medication in their fingers at timestamp 00:03, successfully moved it to their mouth, performed an ingestion action, and subsequently displayed an empty hand to verify the medication was consumed.",
+      "message": "Medication successfully verified as taken.",
+      "model_used": "Clinical AI Vision Engine",
+      "ai_provider": "gemini"
+    }
+  },
+  {
+    "id": "rec-1790382450033",
+    "date": "26 Sept",
+    "scheduledTime": "03:10 AM",
+    "eventTime": "05:57 AM",
+    "doseSlot": "Evening",
+    "timingStatus": "ON_TIME",
+    "verificationEvidence": "INGESTION_CONSISTENT",
+    "pillboxVerified": true,
+    "aiVerified": true,
+    "deviceId": "DSBOX-11",
+    "alertSent": false,
+    "notes": "AI Video Verification: The patient clearly presented the orange medication in their fingers at timestamp 00:03, successfully moved it to their mouth, performed an ingestion action, and subsequently displayed an empty hand to verify the medication was consumed. (Confidence: 100%)",
+    "aiVerificationResult": {
+      "status": "MEDICINE_TAKEN",
+      "verified": true,
+      "confidence": 1,
+      "sequence_valid": true,
+      "events": {
+        "medicine_detected": true,
+        "medicine_to_mouth": true,
+        "mouth_interaction": true,
+        "hand_empty": true,
+        "water_intake": false
+      },
+      "timestamps": {
+        "hand_empty": "00:08",
+        "medicine_detected": "00:03",
+        "medicine_to_mouth": "00:04",
+        "mouth_interaction": "00:06",
+        "water_intake": "N/A"
+      },
+      "step_confidences": {
+        "medicine_confidence": 1,
+        "hand_to_mouth_confidence": 0.94,
+        "mouth_interaction_confidence": 1,
+        "hand_empty_confidence": 1,
+        "water_confidence": 0.3
+      },
+      "medicine_details": {
+        "detected_name": "4-FDC (Rifampicin + Isoniazid + Pyrazinamide + Ethambutol)",
+        "appearance": "Orange tablet",
+        "color": "Orange",
+        "shape": "Round",
+        "confidence": 1,
+        "notes": "Pill detected in hand, gesture tracked to mouth, palm confirmed empty.",
+        "hand_pill_detected": true
+      },
+      "failed_step": null,
+      "explanation": "The patient clearly presented the orange medication in their fingers at timestamp 00:03, successfully moved it to their mouth, performed an ingestion action, and subsequently displayed an empty hand to verify the medication was consumed.",
+      "message": "Medication successfully verified as taken.",
+      "model_used": "Clinical AI Vision Engine",
+      "ai_provider": "gemini"
+    }
+  },
+  {
+    "id": "rec-1790381991351",
+    "date": "26 Sept",
+    "scheduledTime": "03:10 AM",
+    "eventTime": "05:49 AM",
+    "doseSlot": "Evening",
+    "timingStatus": "ON_TIME",
+    "verificationEvidence": "INGESTION_CONSISTENT",
+    "pillboxVerified": true,
+    "aiVerified": true,
+    "deviceId": "DSBOX-11",
+    "alertSent": false,
+    "notes": "AI Video Verification: The patient clearly presented a pill in their hand at the start, moved their hand toward their mouth, engaged in ingestion, and displayed an empty hand immediately afterward, confirming completion of the adherence protocol. (Confidence: 98%)",
+    "aiVerificationResult": {
+      "status": "MEDICINE_TAKEN",
+      "verified": true,
+      "confidence": 0.98,
+      "sequence_valid": true,
+      "events": {
+        "medicine_detected": true,
+        "medicine_to_mouth": true,
+        "mouth_interaction": true,
+        "hand_empty": true,
+        "water_intake": false
+      },
+      "timestamps": {
+        "hand_empty": "00:06",
+        "medicine_detected": "00:02",
+        "medicine_to_mouth": "00:04",
+        "mouth_interaction": "00:05",
+        "water_intake": "N/A"
+      },
+      "step_confidences": {
+        "medicine_confidence": 1,
+        "hand_to_mouth_confidence": 0.94,
+        "mouth_interaction_confidence": 0.95,
+        "hand_empty_confidence": 0.95,
+        "water_confidence": 0.3
+      },
+      "medicine_details": {
+        "detected_name": "4-FDC (Rifampicin + Isoniazid + Pyrazinamide + Ethambutol)",
+        "appearance": "Solid oral medication detected in palm/fingers",
+        "color": "White/off-white",
+        "shape": "Round tablet/capsule",
+        "confidence": 0.92,
+        "notes": "Pill detected in hand, gesture tracked to mouth, palm confirmed empty.",
+        "hand_pill_detected": true
+      },
+      "failed_step": null,
+      "explanation": "The patient clearly presented a pill in their hand at the start, moved their hand toward their mouth, engaged in ingestion, and displayed an empty hand immediately afterward, confirming completion of the adherence protocol.",
+      "message": "Verification successful. The patient has successfully taken the medication.",
+      "model_used": "Clinical AI Vision Engine",
+      "ai_provider": "gemini"
+    }
+  },
+  {
+    "id": "rec-1790381991339",
+    "date": "26 Sept",
+    "scheduledTime": "03:10 AM",
+    "eventTime": "05:49 AM",
+    "doseSlot": "Evening",
+    "timingStatus": "ON_TIME",
+    "verificationEvidence": "INGESTION_CONSISTENT",
+    "pillboxVerified": true,
+    "aiVerified": true,
+    "deviceId": "DSBOX-11",
+    "alertSent": false,
+    "notes": "AI Video Verification: The patient clearly presented a pill in their hand at the start, moved their hand toward their mouth, engaged in ingestion, and displayed an empty hand immediately afterward, confirming completion of the adherence protocol. (Confidence: 98%)",
+    "aiVerificationResult": {
+      "status": "MEDICINE_TAKEN",
+      "verified": true,
+      "confidence": 0.98,
+      "sequence_valid": true,
+      "events": {
+        "medicine_detected": true,
+        "medicine_to_mouth": true,
+        "mouth_interaction": true,
+        "hand_empty": true,
+        "water_intake": false
+      },
+      "timestamps": {
+        "hand_empty": "00:06",
+        "medicine_detected": "00:02",
+        "medicine_to_mouth": "00:04",
+        "mouth_interaction": "00:05",
+        "water_intake": "N/A"
+      },
+      "step_confidences": {
+        "medicine_confidence": 1,
+        "hand_to_mouth_confidence": 0.94,
+        "mouth_interaction_confidence": 0.95,
+        "hand_empty_confidence": 0.95,
+        "water_confidence": 0.3
+      },
+      "medicine_details": {
+        "detected_name": "4-FDC (Rifampicin + Isoniazid + Pyrazinamide + Ethambutol)",
+        "appearance": "Solid oral medication detected in palm/fingers",
+        "color": "White/off-white",
+        "shape": "Round tablet/capsule",
+        "confidence": 0.92,
+        "notes": "Pill detected in hand, gesture tracked to mouth, palm confirmed empty.",
+        "hand_pill_detected": true
+      },
+      "failed_step": null,
+      "explanation": "The patient clearly presented a pill in their hand at the start, moved their hand toward their mouth, engaged in ingestion, and displayed an empty hand immediately afterward, confirming completion of the adherence protocol.",
+      "message": "Verification successful. The patient has successfully taken the medication.",
+      "model_used": "Clinical AI Vision Engine",
+      "ai_provider": "gemini"
+    }
+  },
+  {
+    "id": "rec-hw-1790381898687",
+    "patientId": "DS-TB-1030",
+    "date": "26 Sept",
+    "scheduledTime": "08:00 AM",
+    "eventTime": "2026-09-26T05:48:19+05:30",
+    "doseSlot": "Morning",
+    "timingStatus": "PENDING",
+    "verificationEvidence": "ACCESS_VERIFIED",
+    "pillboxVerified": true,
+    "aiVerified": false,
+    "deviceId": "BOX01",
+    "alertSent": false,
+    "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 1535). Awaiting AI video verification.",
+    "aiVerificationResult": {
+      "verified": false,
+      "confidence": 0.5,
+      "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 1535). Patient must complete 20s AI video verification to confirm dose taken."
+    }
+  },
+  {
+    "id": "rec-1790381540240",
+    "date": "26 Sept",
+    "scheduledTime": "03:10 AM",
+    "eventTime": "05:42 AM",
+    "doseSlot": "Evening",
+    "timingStatus": "ON_TIME",
+    "verificationEvidence": "INGESTION_CONSISTENT",
+    "pillboxVerified": true,
+    "aiVerified": true,
+    "deviceId": "DSBOX-11",
+    "alertSent": false,
+    "notes": "AI Video Verification: The patient clearly presented a red capsule in frames 1 and 2, performed a continuous motion to bring it to their mouth in frames 3 and 4, and subsequently displayed an empty palm in frames 5 and 6, confirming ingestion. (Confidence: 98%)",
+    "aiVerificationResult": {
+      "status": "MEDICINE_TAKEN",
+      "verified": true,
+      "confidence": 0.98,
+      "sequence_valid": true,
+      "events": {
+        "medicine_detected": true,
+        "medicine_to_mouth": true,
+        "mouth_interaction": true,
+        "hand_empty": true,
+        "water_intake": false
+      },
+      "timestamps": {
+        "hand_empty": "00:05",
+        "medicine_detected": "00:02",
+        "medicine_to_mouth": "00:04",
+        "mouth_interaction": "00:04",
+        "water_intake": "N/A"
+      },
+      "step_confidences": {
+        "medicine_confidence": 0.95,
+        "hand_to_mouth_confidence": 0.94,
+        "mouth_interaction_confidence": 0.93,
+        "hand_empty_confidence": 0.96,
+        "water_confidence": 0.3
+      },
+      "medicine_details": {
+        "detected_name": "4-FDC (Rifampicin + Isoniazid + Pyrazinamide + Ethambutol)",
+        "appearance": "Solid oral medication detected in palm/fingers",
+        "color": "White/off-white",
+        "shape": "Round tablet/capsule",
+        "confidence": 0.92,
+        "notes": "Pill detected in hand, gesture tracked to mouth, palm confirmed empty.",
+        "hand_pill_detected": true
+      },
+      "failed_step": null,
+      "explanation": "The patient clearly presented a red capsule in frames 1 and 2, performed a continuous motion to bring it to their mouth in frames 3 and 4, and subsequently displayed an empty palm in frames 5 and 6, confirming ingestion.",
+      "message": "Medication successfully verified as taken.",
+      "model_used": "Clinical AI Vision Engine",
+      "ai_provider": "gemini"
+    }
+  },
+  {
+    "id": "rec-1790381540230",
+    "date": "26 Sept",
+    "scheduledTime": "03:10 AM",
+    "eventTime": "05:42 AM",
+    "doseSlot": "Evening",
+    "timingStatus": "ON_TIME",
+    "verificationEvidence": "INGESTION_CONSISTENT",
+    "pillboxVerified": true,
+    "aiVerified": true,
+    "deviceId": "DSBOX-11",
+    "alertSent": false,
+    "notes": "AI Video Verification: The patient clearly presented a red capsule in frames 1 and 2, performed a continuous motion to bring it to their mouth in frames 3 and 4, and subsequently displayed an empty palm in frames 5 and 6, confirming ingestion. (Confidence: 98%)",
+    "aiVerificationResult": {
+      "status": "MEDICINE_TAKEN",
+      "verified": true,
+      "confidence": 0.98,
+      "sequence_valid": true,
+      "events": {
+        "medicine_detected": true,
+        "medicine_to_mouth": true,
+        "mouth_interaction": true,
+        "hand_empty": true,
+        "water_intake": false
+      },
+      "timestamps": {
+        "hand_empty": "00:05",
+        "medicine_detected": "00:02",
+        "medicine_to_mouth": "00:04",
+        "mouth_interaction": "00:04",
+        "water_intake": "N/A"
+      },
+      "step_confidences": {
+        "medicine_confidence": 0.95,
+        "hand_to_mouth_confidence": 0.94,
+        "mouth_interaction_confidence": 0.93,
+        "hand_empty_confidence": 0.96,
+        "water_confidence": 0.3
+      },
+      "medicine_details": {
+        "detected_name": "4-FDC (Rifampicin + Isoniazid + Pyrazinamide + Ethambutol)",
+        "appearance": "Solid oral medication detected in palm/fingers",
+        "color": "White/off-white",
+        "shape": "Round tablet/capsule",
+        "confidence": 0.92,
+        "notes": "Pill detected in hand, gesture tracked to mouth, palm confirmed empty.",
+        "hand_pill_detected": true
+      },
+      "failed_step": null,
+      "explanation": "The patient clearly presented a red capsule in frames 1 and 2, performed a continuous motion to bring it to their mouth in frames 3 and 4, and subsequently displayed an empty palm in frames 5 and 6, confirming ingestion.",
+      "message": "Medication successfully verified as taken.",
+      "model_used": "Clinical AI Vision Engine",
+      "ai_provider": "gemini"
+    }
+  },
+  {
+    "id": "rec-1790381164847",
+    "date": "26 Sept",
+    "scheduledTime": "05:35 AM",
+    "eventTime": "05:36 AM",
+    "doseSlot": "Morning",
+    "timingStatus": "ON_TIME",
+    "verificationEvidence": "INGESTION_CONSISTENT",
+    "pillboxVerified": true,
+    "aiVerified": true,
+    "deviceId": "DSBOX-13",
+    "alertSent": false,
+    "notes": "AI Video Verification: The patient clearly presented a yellow capsule in the first frame. The capsule was moved toward the mouth and consumed. Subsequently, the patient displayed an empty hand, confirming the ingestion process. (Confidence: 100%)",
+    "aiVerificationResult": {
+      "status": "MEDICINE_TAKEN",
+      "verified": true,
+      "confidence": 1,
+      "sequence_valid": true,
+      "events": {
+        "medicine_detected": true,
+        "medicine_to_mouth": true,
+        "mouth_interaction": true,
+        "hand_empty": true,
+        "water_intake": false
+      },
+      "timestamps": {
+        "hand_empty": "00:05",
+        "medicine_detected": "00:00",
+        "medicine_to_mouth": "00:02",
+        "mouth_interaction": "00:03",
+        "water_intake": "N/A"
+      },
+      "step_confidences": {
+        "medicine_confidence": 1,
+        "hand_to_mouth_confidence": 1,
+        "mouth_interaction_confidence": 1,
+        "hand_empty_confidence": 1,
+        "water_confidence": 1
+      },
+      "medicine_details": {
+        "detected_name": "4-FDC",
+        "appearance": "yellow capsule",
+        "color": "yellow",
+        "shape": "capsule",
+        "confidence": 1,
+        "notes": "Pill detected in hand, gesture tracked to mouth, palm confirmed empty.",
+        "hand_pill_detected": true
+      },
+      "failed_step": null,
+      "explanation": "The patient clearly presented a yellow capsule in the first frame. The capsule was moved toward the mouth and consumed. Subsequently, the patient displayed an empty hand, confirming the ingestion process.",
+      "message": "The medication was successfully verified.",
+      "model_used": "Clinical AI Vision Engine",
+      "ai_provider": "gemini"
+    }
+  },
+  {
+    "id": "rec-1790381164841",
+    "date": "26 Sept",
+    "scheduledTime": "05:35 AM",
+    "eventTime": "05:36 AM",
+    "doseSlot": "Morning",
+    "timingStatus": "ON_TIME",
+    "verificationEvidence": "INGESTION_CONSISTENT",
+    "pillboxVerified": true,
+    "aiVerified": true,
+    "deviceId": "DSBOX-13",
+    "alertSent": false,
+    "notes": "AI Video Verification: The patient clearly presented a yellow capsule in the first frame. The capsule was moved toward the mouth and consumed. Subsequently, the patient displayed an empty hand, confirming the ingestion process. (Confidence: 100%)",
+    "aiVerificationResult": {
+      "status": "MEDICINE_TAKEN",
+      "verified": true,
+      "confidence": 1,
+      "sequence_valid": true,
+      "events": {
+        "medicine_detected": true,
+        "medicine_to_mouth": true,
+        "mouth_interaction": true,
+        "hand_empty": true,
+        "water_intake": false
+      },
+      "timestamps": {
+        "hand_empty": "00:05",
+        "medicine_detected": "00:00",
+        "medicine_to_mouth": "00:02",
+        "mouth_interaction": "00:03",
+        "water_intake": "N/A"
+      },
+      "step_confidences": {
+        "medicine_confidence": 1,
+        "hand_to_mouth_confidence": 1,
+        "mouth_interaction_confidence": 1,
+        "hand_empty_confidence": 1,
+        "water_confidence": 1
+      },
+      "medicine_details": {
+        "detected_name": "4-FDC",
+        "appearance": "yellow capsule",
+        "color": "yellow",
+        "shape": "capsule",
+        "confidence": 1,
+        "notes": "Pill detected in hand, gesture tracked to mouth, palm confirmed empty.",
+        "hand_pill_detected": true
+      },
+      "failed_step": null,
+      "explanation": "The patient clearly presented a yellow capsule in the first frame. The capsule was moved toward the mouth and consumed. Subsequently, the patient displayed an empty hand, confirming the ingestion process.",
+      "message": "The medication was successfully verified.",
+      "model_used": "Clinical AI Vision Engine",
+      "ai_provider": "gemini"
+    }
+  },
+  {
+    "id": "rec-hw-1790381111763",
+    "patientId": "DS-TB-1030",
+    "date": "26 Sept",
+    "scheduledTime": "08:00 AM",
+    "eventTime": "2026-09-26T05:35:12+05:30",
+    "doseSlot": "Morning",
+    "timingStatus": "PENDING",
+    "verificationEvidence": "ACCESS_VERIFIED",
+    "pillboxVerified": true,
+    "aiVerified": false,
+    "deviceId": "BOX01",
+    "alertSent": false,
+    "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 1741). Awaiting AI video verification.",
+    "aiVerificationResult": {
+      "verified": false,
+      "confidence": 0.5,
+      "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 1741). Patient must complete 20s AI video verification to confirm dose taken."
+    }
+  },
+  {
+    "id": "rec-1790380582217",
+    "date": "26 Sept",
+    "scheduledTime": "03:10 AM",
+    "eventTime": "05:26 AM",
+    "doseSlot": "Evening",
+    "timingStatus": "ON_TIME",
+    "verificationEvidence": "INGESTION_CONSISTENT",
+    "pillboxVerified": true,
+    "aiVerified": true,
+    "deviceId": "DSBOX-11",
+    "alertSent": false,
+    "notes": "AI Video Verification: The patient successfully demonstrated the presence of the 4-FDC medication, moved it to their mouth for ingestion, and subsequently presented an empty hand to verify completion of the dose. (Confidence: 100%)",
+    "aiVerificationResult": {
+      "status": "MEDICINE_TAKEN",
+      "verified": true,
+      "confidence": 1,
+      "sequence_valid": true,
+      "events": {
+        "medicine_detected": true,
+        "medicine_to_mouth": true,
+        "mouth_interaction": true,
+        "hand_empty": true,
+        "water_intake": false
+      },
+      "timestamps": {
+        "hand_empty": "00:05",
+        "medicine_detected": "00:01",
+        "medicine_to_mouth": "00:03",
+        "mouth_interaction": "00:04",
+        "water_intake": "N/A"
+      },
+      "step_confidences": {
+        "medicine_confidence": 1,
+        "hand_to_mouth_confidence": 1,
+        "mouth_interaction_confidence": 1,
+        "hand_empty_confidence": 1,
+        "water_confidence": 0
+      },
+      "medicine_details": {
+        "detected_name": "4-FDC (Rifampicin + Isoniazid + Pyrazinamide + Ethambutol)",
+        "appearance": "cylindrical",
+        "color": "orange",
+        "shape": "oblong",
+        "confidence": 1,
+        "notes": "Clear visual confirmation of the pill.",
+        "hand_pill_detected": true
+      },
+      "failed_step": null,
+      "explanation": "The patient successfully demonstrated the presence of the 4-FDC medication, moved it to their mouth for ingestion, and subsequently presented an empty hand to verify completion of the dose.",
+      "message": "The patient has successfully taken the prescribed medication.",
+      "model_used": "Clinical AI Vision Engine",
+      "ai_provider": "gemini"
+    }
+  },
+  {
+    "id": "rec-1790380582214",
+    "date": "26 Sept",
+    "scheduledTime": "03:10 AM",
+    "eventTime": "05:26 AM",
+    "doseSlot": "Evening",
+    "timingStatus": "ON_TIME",
+    "verificationEvidence": "INGESTION_CONSISTENT",
+    "pillboxVerified": true,
+    "aiVerified": true,
+    "deviceId": "DSBOX-11",
+    "alertSent": false,
+    "notes": "AI Video Verification: The patient successfully demonstrated the presence of the 4-FDC medication, moved it to their mouth for ingestion, and subsequently presented an empty hand to verify completion of the dose. (Confidence: 100%)",
+    "aiVerificationResult": {
+      "status": "MEDICINE_TAKEN",
+      "verified": true,
+      "confidence": 1,
+      "sequence_valid": true,
+      "events": {
+        "medicine_detected": true,
+        "medicine_to_mouth": true,
+        "mouth_interaction": true,
+        "hand_empty": true,
+        "water_intake": false
+      },
+      "timestamps": {
+        "hand_empty": "00:05",
+        "medicine_detected": "00:01",
+        "medicine_to_mouth": "00:03",
+        "mouth_interaction": "00:04",
+        "water_intake": "N/A"
+      },
+      "step_confidences": {
+        "medicine_confidence": 1,
+        "hand_to_mouth_confidence": 1,
+        "mouth_interaction_confidence": 1,
+        "hand_empty_confidence": 1,
+        "water_confidence": 0
+      },
+      "medicine_details": {
+        "detected_name": "4-FDC (Rifampicin + Isoniazid + Pyrazinamide + Ethambutol)",
+        "appearance": "cylindrical",
+        "color": "orange",
+        "shape": "oblong",
+        "confidence": 1,
+        "notes": "Clear visual confirmation of the pill.",
+        "hand_pill_detected": true
+      },
+      "failed_step": null,
+      "explanation": "The patient successfully demonstrated the presence of the 4-FDC medication, moved it to their mouth for ingestion, and subsequently presented an empty hand to verify completion of the dose.",
+      "message": "The patient has successfully taken the prescribed medication.",
+      "model_used": "Clinical AI Vision Engine",
+      "ai_provider": "gemini"
+    }
+  },
+  {
+    "id": "rec-hw-1790380480889",
+    "patientId": "DS-TB-1029",
+    "date": "26 Sept",
+    "scheduledTime": "08:00 PM",
+    "eventTime": "2026-09-26T05:24:38+05:30",
+    "doseSlot": "Evening",
+    "timingStatus": "PENDING",
+    "verificationEvidence": "ACCESS_VERIFIED",
+    "pillboxVerified": true,
+    "aiVerified": false,
+    "deviceId": "BOX01",
+    "alertSent": false,
+    "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 1797). Awaiting AI video verification.",
+    "aiVerificationResult": {
+      "verified": false,
+      "confidence": 0.5,
+      "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 1797). Patient must complete 20s AI video verification to confirm dose taken."
+    }
+  },
+  {
+    "id": "rec-1790379768183",
+    "date": "26 Sept",
+    "scheduledTime": "04:55 AM",
+    "eventTime": "05:12 AM",
+    "doseSlot": "Morning",
+    "timingStatus": "ON_TIME",
+    "verificationEvidence": "INGESTION_CONSISTENT",
+    "pillboxVerified": true,
+    "aiVerified": true,
+    "deviceId": "DSBOX-12",
+    "alertSent": false,
+    "notes": "AI Video Verification: The patient presented a yellow pill clearly in the first frame. The movement to the mouth is observed, followed by the disappearance of the medication and a subsequent frame showing the hand empty, confirming successful ingestion. (Confidence: 95%)",
+    "aiVerificationResult": {
+      "status": "MEDICINE_TAKEN",
+      "verified": true,
+      "confidence": 0.95,
+      "sequence_valid": true,
+      "events": {
+        "medicine_detected": true,
+        "medicine_to_mouth": true,
+        "mouth_interaction": true,
+        "hand_empty": true,
+        "water_intake": false
+      },
+      "timestamps": {
+        "medicine_detected": "00:01",
+        "medicine_to_mouth": "00:02",
+        "mouth_interaction": "00:03",
+        "water_intake": "N/A"
+      },
+      "step_confidences": {
+        "medicine_confidence": 1,
+        "hand_to_mouth_confidence": 0.94,
+        "mouth_interaction_confidence": 0.9,
+        "hand_empty_confidence": 0.95,
+        "water_confidence": 0.3
+      },
+      "medicine_details": {
+        "detected_name": "4-FDC",
+        "appearance": "yellow elongated tablet",
+        "color": "yellow",
+        "shape": "oblong",
+        "confidence": 0.95,
+        "notes": "Pill detected in hand, gesture tracked to mouth, palm confirmed empty.",
+        "hand_pill_detected": true
+      },
+      "failed_step": null,
+      "explanation": "The patient presented a yellow pill clearly in the first frame. The movement to the mouth is observed, followed by the disappearance of the medication and a subsequent frame showing the hand empty, confirming successful ingestion.",
+      "message": "Medication successfully verified as taken.",
+      "model_used": "Clinical AI Vision Engine",
+      "ai_provider": "gemini"
+    }
+  },
+  {
+    "id": "rec-1790379768176",
+    "date": "26 Sept",
+    "scheduledTime": "04:55 AM",
+    "eventTime": "05:12 AM",
+    "doseSlot": "Morning",
+    "timingStatus": "ON_TIME",
+    "verificationEvidence": "INGESTION_CONSISTENT",
+    "pillboxVerified": true,
+    "aiVerified": true,
+    "deviceId": "DSBOX-12",
+    "alertSent": false,
+    "notes": "AI Video Verification: The patient presented a yellow pill clearly in the first frame. The movement to the mouth is observed, followed by the disappearance of the medication and a subsequent frame showing the hand empty, confirming successful ingestion. (Confidence: 95%)",
+    "aiVerificationResult": {
+      "status": "MEDICINE_TAKEN",
+      "verified": true,
+      "confidence": 0.95,
+      "sequence_valid": true,
+      "events": {
+        "medicine_detected": true,
+        "medicine_to_mouth": true,
+        "mouth_interaction": true,
+        "hand_empty": true,
+        "water_intake": false
+      },
+      "timestamps": {
+        "medicine_detected": "00:01",
+        "medicine_to_mouth": "00:02",
+        "mouth_interaction": "00:03",
+        "water_intake": "N/A"
+      },
+      "step_confidences": {
+        "medicine_confidence": 1,
+        "hand_to_mouth_confidence": 0.94,
+        "mouth_interaction_confidence": 0.9,
+        "hand_empty_confidence": 0.95,
+        "water_confidence": 0.3
+      },
+      "medicine_details": {
+        "detected_name": "4-FDC",
+        "appearance": "yellow elongated tablet",
+        "color": "yellow",
+        "shape": "oblong",
+        "confidence": 0.95,
+        "notes": "Pill detected in hand, gesture tracked to mouth, palm confirmed empty.",
+        "hand_pill_detected": true
+      },
+      "failed_step": null,
+      "explanation": "The patient presented a yellow pill clearly in the first frame. The movement to the mouth is observed, followed by the disappearance of the medication and a subsequent frame showing the hand empty, confirming successful ingestion.",
+      "message": "Medication successfully verified as taken.",
+      "model_used": "Clinical AI Vision Engine",
+      "ai_provider": "gemini"
+    }
+  },
+  {
+    "id": "rec-1790379715492",
+    "date": "26 Sept",
+    "scheduledTime": "05:10 AM",
+    "eventTime": "05:11 AM",
+    "doseSlot": "Evening",
+    "timingStatus": "ON_TIME",
+    "verificationEvidence": "INGESTION_CONSISTENT",
+    "pillboxVerified": true,
+    "aiVerified": true,
+    "deviceId": "DSBOX-12",
+    "alertSent": false,
+    "notes": "AI Video Verification: The patient clearly presented the prescribed medication in Frame 2, moved it toward their mouth in Frame 3, placed it inside in Frame 4, and showed an empty palm in Frame 5 and 6, confirming ingestion. (Confidence: 100%)",
+    "aiVerificationResult": {
+      "status": "MEDICINE_TAKEN",
+      "verified": true,
+      "confidence": 1,
+      "sequence_valid": true,
+      "events": {
+        "medicine_detected": true,
+        "medicine_to_mouth": true,
+        "mouth_interaction": true,
+        "hand_empty": true,
+        "water_intake": false
+      },
+      "timestamps": {
+        "hand_empty": "00:06",
+        "medicine_detected": "00:02",
+        "medicine_to_mouth": "00:03",
+        "mouth_interaction": "00:04",
+        "water_intake": "N/A"
+      },
+      "step_confidences": {
+        "medicine_confidence": 1,
+        "hand_to_mouth_confidence": 1,
+        "mouth_interaction_confidence": 1,
+        "hand_empty_confidence": 1,
+        "water_confidence": 1
+      },
+      "medicine_details": {
+        "detected_name": "4-FDC",
+        "appearance": "oblong",
+        "color": "reddish-orange",
+        "shape": "oblong",
+        "confidence": 1,
+        "notes": "Pill is consistent with standard appearance of 4-FDC.",
+        "hand_pill_detected": true
+      },
+      "failed_step": null,
+      "explanation": "The patient clearly presented the prescribed medication in Frame 2, moved it toward their mouth in Frame 3, placed it inside in Frame 4, and showed an empty palm in Frame 5 and 6, confirming ingestion.",
+      "message": "Medication successfully verified as taken.",
+      "model_used": "Clinical AI Vision Engine",
+      "ai_provider": "gemini"
+    }
+  },
+  {
+    "id": "rec-1790379715488",
+    "date": "26 Sept",
+    "scheduledTime": "05:10 AM",
+    "eventTime": "05:11 AM",
+    "doseSlot": "Evening",
+    "timingStatus": "ON_TIME",
+    "verificationEvidence": "INGESTION_CONSISTENT",
+    "pillboxVerified": true,
+    "aiVerified": true,
+    "deviceId": "DSBOX-12",
+    "alertSent": false,
+    "notes": "AI Video Verification: The patient clearly presented the prescribed medication in Frame 2, moved it toward their mouth in Frame 3, placed it inside in Frame 4, and showed an empty palm in Frame 5 and 6, confirming ingestion. (Confidence: 100%)",
+    "aiVerificationResult": {
+      "status": "MEDICINE_TAKEN",
+      "verified": true,
+      "confidence": 1,
+      "sequence_valid": true,
+      "events": {
+        "medicine_detected": true,
+        "medicine_to_mouth": true,
+        "mouth_interaction": true,
+        "hand_empty": true,
+        "water_intake": false
+      },
+      "timestamps": {
+        "hand_empty": "00:06",
+        "medicine_detected": "00:02",
+        "medicine_to_mouth": "00:03",
+        "mouth_interaction": "00:04",
+        "water_intake": "N/A"
+      },
+      "step_confidences": {
+        "medicine_confidence": 1,
+        "hand_to_mouth_confidence": 1,
+        "mouth_interaction_confidence": 1,
+        "hand_empty_confidence": 1,
+        "water_confidence": 1
+      },
+      "medicine_details": {
+        "detected_name": "4-FDC",
+        "appearance": "oblong",
+        "color": "reddish-orange",
+        "shape": "oblong",
+        "confidence": 1,
+        "notes": "Pill is consistent with standard appearance of 4-FDC.",
+        "hand_pill_detected": true
+      },
+      "failed_step": null,
+      "explanation": "The patient clearly presented the prescribed medication in Frame 2, moved it toward their mouth in Frame 3, placed it inside in Frame 4, and showed an empty palm in Frame 5 and 6, confirming ingestion.",
+      "message": "Medication successfully verified as taken.",
+      "model_used": "Clinical AI Vision Engine",
+      "ai_provider": "gemini"
+    }
+  },
+  {
+    "id": "rec-hw-1790379668112",
+    "patientId": "DS-TB-1029",
+    "date": "26 Sept",
+    "scheduledTime": "08:00 AM",
+    "eventTime": "2026-09-26T05:11:08+05:30",
+    "doseSlot": "Morning",
+    "timingStatus": "PENDING",
+    "verificationEvidence": "ACCESS_VERIFIED",
+    "pillboxVerified": true,
+    "aiVerified": false,
+    "deviceId": "BOX01",
+    "alertSent": false,
+    "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 1614). Awaiting AI video verification.",
+    "aiVerificationResult": {
+      "verified": false,
+      "confidence": 0.5,
+      "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 1614). Patient must complete 20s AI video verification to confirm dose taken."
+    }
+  },
+  {
+    "id": "rec-hw-1790379667640",
+    "patientId": "DS-TB-1029",
+    "date": "26 Sept",
+    "scheduledTime": "08:00 PM",
+    "eventTime": "2026-09-26T05:11:08+05:30",
+    "doseSlot": "Evening",
+    "timingStatus": "PENDING",
+    "verificationEvidence": "ACCESS_VERIFIED",
+    "pillboxVerified": true,
+    "aiVerified": false,
+    "deviceId": "BOX01",
+    "alertSent": false,
+    "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 1966). Awaiting AI video verification.",
+    "aiVerificationResult": {
+      "verified": false,
+      "confidence": 0.5,
+      "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 1966). Patient must complete 20s AI video verification to confirm dose taken."
+    }
+  },
+  {
+    "id": "rec-1790379040879",
+    "date": "26 Sept",
+    "scheduledTime": "04:55 AM",
+    "eventTime": "05:00 AM",
+    "doseSlot": "Morning",
+    "timingStatus": "ON_TIME",
+    "verificationEvidence": "INGESTION_CONSISTENT",
+    "pillboxVerified": true,
+    "aiVerified": true,
+    "deviceId": "DSBOX-12",
+    "alertSent": false,
+    "notes": "AI Video Verification: The patient clearly presents an orange pill in Frame 2, moves it toward their mouth in Frame 3, performs an ingestion action in Frame 4, and shows an empty hand in Frame 6, completing the full sequence. (Confidence: 100%)",
+    "aiVerificationResult": {
+      "status": "MEDICINE_TAKEN",
+      "verified": true,
+      "confidence": 1,
+      "sequence_valid": true,
+      "events": {
+        "medicine_detected": true,
+        "medicine_to_mouth": true,
+        "mouth_interaction": true,
+        "hand_empty": true,
+        "water_intake": false
+      },
+      "timestamps": {
+        "hand_empty": "00:06",
+        "medicine_detected": "00:01",
+        "medicine_to_mouth": "00:04",
+        "mouth_interaction": "00:05",
+        "water_intake": "N/A"
+      },
+      "step_confidences": {
+        "medicine_confidence": 1,
+        "hand_to_mouth_confidence": 1,
+        "mouth_interaction_confidence": 1,
+        "hand_empty_confidence": 1,
+        "water_confidence": 0
+      },
+      "medicine_details": {
+        "detected_name": "4-FDC",
+        "appearance": "solid",
+        "color": "orange",
+        "shape": "oval",
+        "confidence": 1,
+        "notes": "Clearly visible",
+        "hand_pill_detected": true
+      },
+      "failed_step": null,
+      "explanation": "The patient clearly presents an orange pill in Frame 2, moves it toward their mouth in Frame 3, performs an ingestion action in Frame 4, and shows an empty hand in Frame 6, completing the full sequence.",
+      "message": "Medicine intake verified.",
+      "model_used": "Clinical AI Vision Engine",
+      "ai_provider": "gemini"
+    }
+  },
+  {
+    "id": "rec-1790379040877",
+    "date": "26 Sept",
+    "scheduledTime": "04:55 AM",
+    "eventTime": "05:00 AM",
+    "doseSlot": "Morning",
+    "timingStatus": "ON_TIME",
+    "verificationEvidence": "INGESTION_CONSISTENT",
+    "pillboxVerified": true,
+    "aiVerified": true,
+    "deviceId": "DSBOX-12",
+    "alertSent": false,
+    "notes": "AI Video Verification: The patient clearly presents an orange pill in Frame 2, moves it toward their mouth in Frame 3, performs an ingestion action in Frame 4, and shows an empty hand in Frame 6, completing the full sequence. (Confidence: 100%)",
+    "aiVerificationResult": {
+      "status": "MEDICINE_TAKEN",
+      "verified": true,
+      "confidence": 1,
+      "sequence_valid": true,
+      "events": {
+        "medicine_detected": true,
+        "medicine_to_mouth": true,
+        "mouth_interaction": true,
+        "hand_empty": true,
+        "water_intake": false
+      },
+      "timestamps": {
+        "hand_empty": "00:06",
+        "medicine_detected": "00:01",
+        "medicine_to_mouth": "00:04",
+        "mouth_interaction": "00:05",
+        "water_intake": "N/A"
+      },
+      "step_confidences": {
+        "medicine_confidence": 1,
+        "hand_to_mouth_confidence": 1,
+        "mouth_interaction_confidence": 1,
+        "hand_empty_confidence": 1,
+        "water_confidence": 0
+      },
+      "medicine_details": {
+        "detected_name": "4-FDC",
+        "appearance": "solid",
+        "color": "orange",
+        "shape": "oval",
+        "confidence": 1,
+        "notes": "Clearly visible",
+        "hand_pill_detected": true
+      },
+      "failed_step": null,
+      "explanation": "The patient clearly presents an orange pill in Frame 2, moves it toward their mouth in Frame 3, performs an ingestion action in Frame 4, and shows an empty hand in Frame 6, completing the full sequence.",
+      "message": "Medicine intake verified.",
+      "model_used": "Clinical AI Vision Engine",
+      "ai_provider": "gemini"
+    }
+  },
+  {
+    "id": "rec-hw-1790378977422",
+    "patientId": "DS-TB-1029",
+    "date": "26 Sept",
+    "scheduledTime": "08:00 AM",
+    "eventTime": "2026-09-26T04:59:35+05:30",
+    "doseSlot": "Morning",
+    "timingStatus": "PENDING",
+    "verificationEvidence": "ACCESS_VERIFIED",
+    "pillboxVerified": true,
+    "aiVerified": false,
+    "deviceId": "BOX01",
+    "alertSent": false,
+    "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 1599). Awaiting AI video verification.",
+    "aiVerificationResult": {
+      "verified": false,
+      "confidence": 0.5,
+      "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 1599). Patient must complete 20s AI video verification to confirm dose taken."
+    }
+  },
+  {
+    "id": "rec-1790378762036",
+    "date": "26 Sept",
+    "scheduledTime": "04:55 AM",
+    "eventTime": "04:56 AM",
+    "doseSlot": "Morning",
+    "timingStatus": "ON_TIME",
+    "verificationEvidence": "INGESTION_CONSISTENT",
+    "pillboxVerified": true,
+    "aiVerified": true,
+    "deviceId": "DSBOX-12",
+    "alertSent": false,
+    "notes": "AI Video Verification: The patient clearly presented an orange, oblong tablet in the first two frames, successfully moved it to their mouth in frames 3-4, and showed an empty, open palm in frames 5-6, confirming completion of the dose. (Confidence: 100%)",
+    "aiVerificationResult": {
+      "status": "MEDICINE_TAKEN",
+      "verified": true,
+      "confidence": 1,
+      "sequence_valid": true,
+      "events": {
+        "medicine_detected": true,
+        "medicine_to_mouth": true,
+        "mouth_interaction": true,
+        "hand_empty": true,
+        "water_intake": false
+      },
+      "timestamps": {
+        "hand_empty": "00:06",
+        "medicine_detected": "00:01",
+        "medicine_to_mouth": "00:03",
+        "mouth_interaction": "00:04",
+        "water_intake": "N/A"
+      },
+      "step_confidences": {
+        "medicine_confidence": 1,
+        "hand_to_mouth_confidence": 1,
+        "mouth_interaction_confidence": 1,
+        "hand_empty_confidence": 1,
+        "water_confidence": 0
+      },
+      "medicine_details": {
+        "detected_name": "4-FDC",
+        "appearance": "oblong tablet",
+        "color": "orange",
+        "shape": "oblong",
+        "confidence": 1,
+        "notes": "Clear presentation of the medication.",
+        "hand_pill_detected": true
+      },
+      "failed_step": null,
+      "explanation": "The patient clearly presented an orange, oblong tablet in the first two frames, successfully moved it to their mouth in frames 3-4, and showed an empty, open palm in frames 5-6, confirming completion of the dose.",
+      "message": "The patient has successfully followed the medication intake procedure.",
+      "model_used": "Clinical AI Vision Engine",
+      "ai_provider": "gemini"
+    }
+  },
+  {
+    "id": "rec-1790378762032",
+    "date": "26 Sept",
+    "scheduledTime": "04:55 AM",
+    "eventTime": "04:56 AM",
+    "doseSlot": "Morning",
+    "timingStatus": "ON_TIME",
+    "verificationEvidence": "INGESTION_CONSISTENT",
+    "pillboxVerified": true,
+    "aiVerified": true,
+    "deviceId": "DSBOX-12",
+    "alertSent": false,
+    "notes": "AI Video Verification: The patient clearly presented an orange, oblong tablet in the first two frames, successfully moved it to their mouth in frames 3-4, and showed an empty, open palm in frames 5-6, confirming completion of the dose. (Confidence: 100%)",
+    "aiVerificationResult": {
+      "status": "MEDICINE_TAKEN",
+      "verified": true,
+      "confidence": 1,
+      "sequence_valid": true,
+      "events": {
+        "medicine_detected": true,
+        "medicine_to_mouth": true,
+        "mouth_interaction": true,
+        "hand_empty": true,
+        "water_intake": false
+      },
+      "timestamps": {
+        "hand_empty": "00:06",
+        "medicine_detected": "00:01",
+        "medicine_to_mouth": "00:03",
+        "mouth_interaction": "00:04",
+        "water_intake": "N/A"
+      },
+      "step_confidences": {
+        "medicine_confidence": 1,
+        "hand_to_mouth_confidence": 1,
+        "mouth_interaction_confidence": 1,
+        "hand_empty_confidence": 1,
+        "water_confidence": 0
+      },
+      "medicine_details": {
+        "detected_name": "4-FDC",
+        "appearance": "oblong tablet",
+        "color": "orange",
+        "shape": "oblong",
+        "confidence": 1,
+        "notes": "Clear presentation of the medication.",
+        "hand_pill_detected": true
+      },
+      "failed_step": null,
+      "explanation": "The patient clearly presented an orange, oblong tablet in the first two frames, successfully moved it to their mouth in frames 3-4, and showed an empty, open palm in frames 5-6, confirming completion of the dose.",
+      "message": "The patient has successfully followed the medication intake procedure.",
+      "model_used": "Clinical AI Vision Engine",
+      "ai_provider": "gemini"
+    }
+  },
+  {
+    "id": "rec-hw-1790378703765",
+    "patientId": "DS-TB-1029",
+    "date": "26 Sept",
+    "scheduledTime": "08:00 AM",
+    "eventTime": "2026-09-26T04:55:04+05:30",
+    "doseSlot": "Morning",
+    "timingStatus": "PENDING",
+    "verificationEvidence": "ACCESS_VERIFIED",
+    "pillboxVerified": true,
+    "aiVerified": false,
+    "deviceId": "BOX01",
+    "alertSent": false,
+    "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 2314). Awaiting AI video verification.",
+    "aiVerificationResult": {
+      "verified": false,
+      "confidence": 0.5,
+      "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 2314). Patient must complete 20s AI video verification to confirm dose taken."
+    }
+  },
+  {
+    "id": "rec-hw-1790376386853",
+    "patientId": "DS-TB-1028",
+    "date": "26 Sept",
+    "scheduledTime": "08:00 AM",
+    "eventTime": "08:02 AM",
+    "doseSlot": "Morning",
+    "timingStatus": "PENDING",
+    "verificationEvidence": "ACCESS_VERIFIED",
+    "pillboxVerified": true,
+    "aiVerified": false,
+    "deviceId": "BOX01",
+    "alertSent": false,
+    "notes": "Smart pillbox access recorded automatically by ESP32 physical sensor (LDR value: 1250). Awaiting AI video verification.",
+    "aiVerificationResult": {
+      "verified": false,
+      "confidence": 0.5,
+      "explanation": "Physical smart pillbox access verified via optical LDR sensor (reading: 1250). Patient must complete 20s AI video verification to confirm dose taken."
+    }
+  },
+  {
     "id": "rec-1790372542508",
     "date": "26 Sept",
     "scheduledTime": "03:00 AM",

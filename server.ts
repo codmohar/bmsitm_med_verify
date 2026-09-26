@@ -5,8 +5,10 @@ import { createServer as createViteServer } from "vite";
 import { verificationRouter } from "./ai/routes/verificationRoutes.js";
 import { hardwareRouter } from "./hardware/routes/hardwareRoutes.js";
 import { dbRouter } from "./backend/routes/dbRoutes.js";
+import { whatsappRouter } from "./backend/routes/whatsappRoutes.js";
 
 dotenv.config();
+dotenv.config({ path: path.resolve(process.cwd(), "backend/.env") });
 
 const app = express();
 const PORT = 3000;
@@ -19,6 +21,7 @@ app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.use("/api", verificationRouter);
 app.use("/api/hardware", hardwareRouter);
 app.use("/api/db", dbRouter);
+app.use("/api/whatsapp", whatsappRouter);
 
 // Start Express Server with Vite integration
 async function startServer() {

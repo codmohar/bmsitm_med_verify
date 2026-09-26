@@ -1,5 +1,6 @@
 import { dbService } from '../../db/dbService.js';
 import { DoseSlot, TimingStatus, VerificationEvidence, DoseRecord, Alert } from '../../db/types.js';
+import { whatsappService } from '../../backend/services/whatsappService.js';
 
 export interface CompartmentSchedule {
   compartment: number;
@@ -493,6 +494,8 @@ class HardwareService {
         dbService.recordDose(doseRecord);
 
         console.log(`[DoseSure Hardware] Patient ${patient.fullName} (${patient.id}) Dose ${slot} pillbox access recorded (Pillbox: GREEN, AI: RED - Awaiting AI Video).`);
+
+        // Note: WhatsApp notifications are restricted exclusively to AI Video Verification completion per user requirement.
       } else if (event_type === 'WINDOW_EXPIRED' || event_type === 'MISSED_DOSE') {
         actionTaken = 'MISSED_DOSE_RECORDED';
 

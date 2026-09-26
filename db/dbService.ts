@@ -187,6 +187,14 @@ class DatabaseService {
     return this.patientsByPillbox.get(pillboxId);
   }
 
+  public getPatientByName(name: string): Patient | undefined {
+    if (!name) return undefined;
+    const clean = name.trim().toLowerCase();
+    return Array.from(this.patientsById.values()).find(
+      (p) => p.fullName.trim().toLowerCase() === clean
+    );
+  }
+
   public savePatient(patient: Patient): Patient {
     this.patientsById.set(patient.id, patient);
     if (patient.pillboxId) {

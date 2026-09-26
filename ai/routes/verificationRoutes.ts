@@ -53,6 +53,10 @@ verificationRouter.post('/verify-medicine', async (req: Request, res: Response) 
     }
 
     const result = await executeAiVerification(payload);
+
+    // WhatsApp notification is triggered from the FRONTEND when "MEDICINE TAKEN ✓" is displayed.
+    // This avoids sending to unverified patient numbers on Trial accounts.
+
     return res.status(200).json(result);
   } catch (error: any) {
     console.error('API Verification Handler Error:', error);
@@ -68,6 +72,9 @@ verificationRouter.post('/verify-frames', async (req: Request, res: Response) =>
   try {
     const payload: VideoVerificationRequest = req.body || {};
     const result = await executeAiVerification(payload);
+
+    // WhatsApp notification is triggered from the FRONTEND when "MEDICINE TAKEN ✓" is displayed.
+
     return res.status(200).json(result);
   } catch (error: any) {
     console.error('Frame Verification Handler Error:', error);

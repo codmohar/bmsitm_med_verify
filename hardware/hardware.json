@@ -21,20 +21,20 @@
     "windowMinutes": 60,
     "lastSync": "2026-09-25T11:36:47.923Z",
     "lastEvent": {
-      "event_id": "BOX01-000090",
+      "event_id": "BOX01-000143",
       "device_id": "BOX01",
       "patient_id": "DS-TB-1027",
       "compartment": 2,
-      "event_type": "OUT_OF_WINDOW_OPEN",
-      "event_time": "2026-09-26T03:01:29+05:30",
-      "ldr_value": 1617
+      "event_type": "WINDOW_EXPIRED",
+      "event_time": "2026-09-26T06:07:19+05:30",
+      "ldr_value": 576
     },
-    "lastPing": "2026-09-25T21:39:17.561Z",
-    "lastUpdated": "2026-09-25T22:00:08.201Z",
-    "scheduleVersion": 1790373608201,
-    "updatedAt": "2026-09-25T22:00:08.201Z",
+    "lastPing": "2026-09-26T00:37:19.048Z",
+    "lastUpdated": "2026-09-26T00:37:19.048Z",
+    "scheduleVersion": 1790383035816,
+    "updatedAt": "2026-09-26T00:37:15.816Z",
     "timezone": "Asia/Kolkata",
-    "ipAddress": "127.0.0.1"
+    "ipAddress": "10.110.2.84"
   },
   "DSBOX-04": {
     "deviceId": "DSBOX-04",
@@ -112,27 +112,27 @@
   },
   "DSBOX-12": {
     "deviceId": "DSBOX-12",
-    "patientId": "NONE",
-    "patientName": "Unassigned",
+    "patientId": "DS-TB-1029",
+    "patientName": "govind_ji",
     "compartments": [
       {
         "compartment": 1,
         "slot": "Morning",
-        "hour": 8,
-        "minute": 0
+        "hour": 4,
+        "minute": 55
       },
       {
         "compartment": 2,
         "slot": "Evening",
-        "hour": 20,
-        "minute": 0
+        "hour": 5,
+        "minute": 10
       }
     ],
-    "windowMinutes": 30,
-    "scheduleVersion": 1790356895623,
-    "updatedAt": "2026-09-25T17:21:35.623Z",
+    "windowMinutes": 60,
+    "scheduleVersion": 1790379652493,
+    "updatedAt": "2026-09-25T23:40:52.493Z",
     "timezone": "Asia/Kolkata",
-    "lastUpdated": "2026-09-25T17:21:35.623Z"
+    "lastUpdated": "2026-09-25T23:40:52.493Z"
   },
   "DSBOX-08": {
     "deviceId": "DSBOX-08",
@@ -160,8 +160,8 @@
   },
   "DSBOX-02": {
     "deviceId": "DSBOX-02",
-    "patientId": "NONE",
-    "patientName": "Unassigned",
+    "patientId": "DS-TB-1028",
+    "patientName": "Mohammed Farooq",
     "compartments": [
       {
         "compartment": 1,
@@ -176,11 +176,11 @@
         "minute": 0
       }
     ],
-    "windowMinutes": 30,
-    "scheduleVersion": 1790356928949,
-    "updatedAt": "2026-09-25T17:22:08.949Z",
+    "windowMinutes": 60,
+    "scheduleVersion": 1790377344484,
+    "updatedAt": "2026-09-25T23:02:24.484Z",
     "timezone": "Asia/Kolkata",
-    "lastUpdated": "2026-09-25T17:22:08.949Z"
+    "lastUpdated": "2026-09-25T23:02:24.484Z"
   },
   "DSBOX-19": {
     "deviceId": "DSBOX-19",
@@ -249,10 +249,10 @@
       }
     ],
     "windowMinutes": 60,
-    "scheduleVersion": 1790373608199,
-    "updatedAt": "2026-09-25T22:00:08.199Z",
+    "scheduleVersion": 1790383035813,
+    "updatedAt": "2026-09-26T00:37:15.813Z",
     "timezone": "Asia/Kolkata",
-    "lastUpdated": "2026-09-25T22:00:08.199Z",
+    "lastUpdated": "2026-09-26T00:37:15.813Z",
     "lastEvent": {
       "event_id": "MANUAL-1790367882543",
       "device_id": "DSBOX-11",
@@ -288,5 +288,53 @@
     "updatedAt": "2026-09-25T18:27:36.965Z",
     "timezone": "Asia/Kolkata",
     "lastUpdated": "2026-09-25T18:27:36.965Z"
+  },
+  "DSBOX-01": {
+    "deviceId": "DSBOX-01",
+    "patientId": "NONE",
+    "patientName": "Unassigned",
+    "compartments": [
+      {
+        "compartment": 1,
+        "slot": "Morning",
+        "hour": 8,
+        "minute": 0
+      },
+      {
+        "compartment": 2,
+        "slot": "Evening",
+        "hour": 20,
+        "minute": 0
+      }
+    ],
+    "windowMinutes": 30,
+    "scheduleVersion": 1790377336734,
+    "updatedAt": "2026-09-25T23:02:16.734Z",
+    "timezone": "Asia/Kolkata",
+    "lastUpdated": "2026-09-25T23:02:16.734Z"
+  },
+  "DSBOX-13": {
+    "deviceId": "DSBOX-13",
+    "patientId": "DS-TB-1030",
+    "patientName": "Active Patient",
+    "compartments": [
+      {
+        "compartment": 1,
+        "slot": "Morning",
+        "hour": 5,
+        "minute": 35
+      },
+      {
+        "compartment": 2,
+        "slot": "Evening",
+        "hour": 20,
+        "minute": 0
+      }
+    ],
+    "windowMinutes": 60,
+    "scheduleVersion": 1790380742737,
+    "updatedAt": "2026-09-25T23:59:02.737Z",
+    "timezone": "Asia/Kolkata",
+    "lastUpdated": "2026-09-25T23:59:02.737Z"
   }
 }
